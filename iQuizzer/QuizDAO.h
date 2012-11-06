@@ -1,21 +1,13 @@
 //
-//  Quiz.m
+//  QuizDAO.h
 //  iQuizzer
 //
 //  Created by Tiago Bencardino on 06/11/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
-#import "Quiz.h"
-#import "Pergunta.h"
+#import <Foundation/Foundation.h>
 
-
-@implementation Quiz
-
-@dynamic titulo;
-@dynamic index;
-@dynamic perguntas;
-
-
-
+@interface QuizDAO : NSObject
++(NSArray*)findAllFromServer;
 @end

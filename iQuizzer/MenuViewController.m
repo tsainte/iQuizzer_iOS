@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController.h"
-
+#import "ListaQuizzesViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -38,7 +38,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 5;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell* cell = [[UITableViewCell alloc]init];
@@ -47,12 +47,15 @@
             cell.textLabel.text = @"Jogar";
             break;
         case 1:
-            cell.textLabel.text = @"Quizzes";
+            cell.textLabel.text = @"Meus quizzes";
             break;
         case 2:
-            cell.textLabel.text = @"Pontuações";
+            cell.textLabel.text = @"Obter mais";
             break;
         case 3:
+            cell.textLabel.text = @"Pontuações";
+            break;
+        case 4:
             cell.textLabel.text = @"Sobre";
             break;
         default:
@@ -61,9 +64,10 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
     switch (indexPath.row) {
         case 0:
-            
+            [self lista];
             break;
         case 1:
             
@@ -77,5 +81,9 @@
         default:
             break;
     }
+}
+-(void) lista{
+    ListaQuizzesViewController* listaView = [[ListaQuizzesViewController alloc] initWithNibName:@"ListaQuizzesViewController" bundle:nil];
+    [self.navigationController pushViewController:listaView animated:YES];
 }
 @end

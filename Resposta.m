@@ -2,7 +2,7 @@
 //  Resposta.m
 //  iQuizzer
 //
-//  Created by Tiago Bencardino on 05/11/12.
+//  Created by Tiago Bencardino on 06/11/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 @dynamic conteudo;
 @dynamic correta;
+@dynamic id;
 @dynamic pergunta;
 
 @end

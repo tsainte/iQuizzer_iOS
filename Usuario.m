@@ -2,7 +2,7 @@
 //  Usuario.m
 //  iQuizzer
 //
-//  Created by Tiago Bencardino on 05/11/12.
+//  Created by Tiago Bencardino on 06/11/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
@@ -16,5 +16,6 @@
 @dynamic sobrenome;
 @dynamic pontos_criador;
 @dynamic pontos_jogador;
+@dynamic id;
 
 @end

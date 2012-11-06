@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListaQuizzesViewController : UIViewController
-
+@interface ListaQuizzesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (strong) NSArray* quizzes;
 @end

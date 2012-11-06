@@ -2,7 +2,7 @@
 //  Resposta.h
 //  iQuizzer
 //
-//  Created by Tiago Bencardino on 05/11/12.
+//  Created by Tiago Bencardino on 06/11/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * conteudo;
 @property (nonatomic, retain) NSNumber * correta;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Pergunta *pergunta;
 
 @end

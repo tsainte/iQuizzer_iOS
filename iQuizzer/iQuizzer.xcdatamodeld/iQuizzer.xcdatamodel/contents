@@ -2,29 +2,33 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C54" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Pergunta" representedClassName="Pergunta" syncable="YES">
         <attribute name="conteudo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="quiz" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Quiz" inverseName="perguntas" inverseEntity="Quiz" syncable="YES"/>
         <relationship name="resposta" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Resposta" inverseName="pergunta" inverseEntity="Resposta" syncable="YES"/>
     </entity>
     <entity name="Quiz" representedClassName="Quiz" syncable="YES">
+        <attribute name="index" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="perguntas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Pergunta" inverseName="quiz" inverseEntity="Pergunta" syncable="YES"/>
     </entity>
     <entity name="Resposta" representedClassName="Resposta" syncable="YES">
         <attribute name="conteudo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="correta" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="pergunta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pergunta" inverseName="resposta" inverseEntity="Pergunta" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
         <attribute name="apelido" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pontos_criador" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="pontos_jogador" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="sobrenome" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Quiz" positionX="126" positionY="81" width="128" height="73"/>
-        <element name="Pergunta" positionX="313" positionY="81" width="128" height="88"/>
-        <element name="Resposta" positionX="315" positionY="240" width="128" height="88"/>
-        <element name="Usuario" positionX="-45" positionY="72" width="128" height="118"/>
+        <element name="Quiz" positionX="126" positionY="81" width="128" height="88"/>
+        <element name="Pergunta" positionX="313" positionY="81" width="128" height="103"/>
+        <element name="Resposta" positionX="315" positionY="275" width="128" height="103"/>
+        <element name="Usuario" positionX="-45" positionY="72" width="128" height="133"/>
     </elements>
 </model>
