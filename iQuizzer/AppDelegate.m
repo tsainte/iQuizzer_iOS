@@ -7,18 +7,26 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MenuViewController.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize isAuth;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    MenuViewController* menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:menu];
+    
+    self.window.rootViewController = nav;
+    
+    
+    [self.window addSubview:menu.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -144,6 +152,14 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+-(BOOL)isAuth{
+    //logica para verificar se usuário está autenticado...
+    return isAuth;
+}
+-(BOOL)authenticate{
+    return true;
 }
 
 @end

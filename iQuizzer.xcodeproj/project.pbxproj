@@ -18,6 +18,17 @@
 		F1CA3F53164813D300D240C7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3F52164813D300D240C7 /* Default@2x.png */; };
 		F1CA3F55164813D300D240C7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3F54164813D300D240C7 /* Default-568h@2x.png */; };
 		F1CA3F58164813D300D240C7 /* iQuizzer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F56164813D300D240C7 /* iQuizzer.xcdatamodeld */; };
+		F1CA3F631648330500D240C7 /* ListaQuizzesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F611648330500D240C7 /* ListaQuizzesViewController.m */; };
+		F1CA3F641648330500D240C7 /* ListaQuizzesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3F621648330500D240C7 /* ListaQuizzesViewController.xib */; };
+		F1CA3F67164836F000D240C7 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F66164836F000D240C7 /* Quiz.m */; };
+		F1CA3F6A1648370200D240C7 /* Pergunta.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F691648370200D240C7 /* Pergunta.m */; };
+		F1CA3F6D1648371600D240C7 /* Resposta.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F6C1648371600D240C7 /* Resposta.m */; };
+		F1CA3F711648395700D240C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F6F1648395600D240C7 /* MenuViewController.m */; };
+		F1CA3F721648395700D240C7 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3F701648395600D240C7 /* MenuViewController.xib */; };
+		F1CA3F761648413300D240C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F741648413300D240C7 /* LoginViewController.m */; };
+		F1CA3F771648413300D240C7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3F751648413300D240C7 /* LoginViewController.xib */; };
+		F1CA3F79164841C100D240C7 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3F78164841C000D240C7 /* facebook.png */; };
+		F1CA3F84164862A100D240C7 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F83164862A100D240C7 /* Usuario.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +47,24 @@
 		F1CA3F52164813D300D240C7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F1CA3F54164813D300D240C7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F1CA3F57164813D300D240C7 /* iQuizzer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iQuizzer.xcdatamodel; sourceTree = "<group>"; };
+		F1CA3F601648330500D240C7 /* ListaQuizzesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaQuizzesViewController.h; sourceTree = "<group>"; };
+		F1CA3F611648330500D240C7 /* ListaQuizzesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaQuizzesViewController.m; sourceTree = "<group>"; };
+		F1CA3F621648330500D240C7 /* ListaQuizzesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListaQuizzesViewController.xib; sourceTree = "<group>"; };
+		F1CA3F65164836F000D240C7 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
+		F1CA3F66164836F000D240C7 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
+		F1CA3F681648370200D240C7 /* Pergunta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pergunta.h; sourceTree = "<group>"; };
+		F1CA3F691648370200D240C7 /* Pergunta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pergunta.m; sourceTree = "<group>"; };
+		F1CA3F6B1648371600D240C7 /* Resposta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resposta.h; sourceTree = "<group>"; };
+		F1CA3F6C1648371600D240C7 /* Resposta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resposta.m; sourceTree = "<group>"; };
+		F1CA3F6E1648395600D240C7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		F1CA3F6F1648395600D240C7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		F1CA3F701648395600D240C7 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		F1CA3F731648413300D240C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F1CA3F741648413300D240C7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F1CA3F751648413300D240C7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F1CA3F78164841C000D240C7 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = ../../../../Documents/Images/facebook.png; sourceTree = "<group>"; };
+		F1CA3F82164862A100D240C7 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		F1CA3F83164862A100D240C7 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +85,7 @@
 		F1CA3F2D164813D300D240C7 = {
 			isa = PBXGroup;
 			children = (
+				F1CA3F78164841C000D240C7 /* facebook.png */,
 				F1CA3F44164813D300D240C7 /* iQuizzer */,
 				F1CA3F3B164813D300D240C7 /* Frameworks */,
 				F1CA3F39164813D300D240C7 /* Products */,
@@ -87,7 +117,24 @@
 				F1CA3F4D164813D300D240C7 /* AppDelegate.h */,
 				F1CA3F4E164813D300D240C7 /* AppDelegate.m */,
 				F1CA3F56164813D300D240C7 /* iQuizzer.xcdatamodeld */,
+				F1CA3F82164862A100D240C7 /* Usuario.h */,
+				F1CA3F83164862A100D240C7 /* Usuario.m */,
+				F1CA3F6B1648371600D240C7 /* Resposta.h */,
+				F1CA3F6C1648371600D240C7 /* Resposta.m */,
+				F1CA3F681648370200D240C7 /* Pergunta.h */,
+				F1CA3F691648370200D240C7 /* Pergunta.m */,
+				F1CA3F65164836F000D240C7 /* Quiz.h */,
+				F1CA3F66164836F000D240C7 /* Quiz.m */,
 				F1CA3F45164813D300D240C7 /* Supporting Files */,
+				F1CA3F601648330500D240C7 /* ListaQuizzesViewController.h */,
+				F1CA3F611648330500D240C7 /* ListaQuizzesViewController.m */,
+				F1CA3F621648330500D240C7 /* ListaQuizzesViewController.xib */,
+				F1CA3F6E1648395600D240C7 /* MenuViewController.h */,
+				F1CA3F6F1648395600D240C7 /* MenuViewController.m */,
+				F1CA3F701648395600D240C7 /* MenuViewController.xib */,
+				F1CA3F731648413300D240C7 /* LoginViewController.h */,
+				F1CA3F741648413300D240C7 /* LoginViewController.m */,
+				F1CA3F751648413300D240C7 /* LoginViewController.xib */,
 			);
 			path = iQuizzer;
 			sourceTree = "<group>";
@@ -161,6 +208,10 @@
 				F1CA3F51164813D300D240C7 /* Default.png in Resources */,
 				F1CA3F53164813D300D240C7 /* Default@2x.png in Resources */,
 				F1CA3F55164813D300D240C7 /* Default-568h@2x.png in Resources */,
+				F1CA3F641648330500D240C7 /* ListaQuizzesViewController.xib in Resources */,
+				F1CA3F721648395700D240C7 /* MenuViewController.xib in Resources */,
+				F1CA3F771648413300D240C7 /* LoginViewController.xib in Resources */,
+				F1CA3F79164841C100D240C7 /* facebook.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +225,13 @@
 				F1CA3F4B164813D300D240C7 /* main.m in Sources */,
 				F1CA3F4F164813D300D240C7 /* AppDelegate.m in Sources */,
 				F1CA3F58164813D300D240C7 /* iQuizzer.xcdatamodeld in Sources */,
+				F1CA3F631648330500D240C7 /* ListaQuizzesViewController.m in Sources */,
+				F1CA3F67164836F000D240C7 /* Quiz.m in Sources */,
+				F1CA3F6A1648370200D240C7 /* Pergunta.m in Sources */,
+				F1CA3F6D1648371600D240C7 /* Resposta.m in Sources */,
+				F1CA3F711648395700D240C7 /* MenuViewController.m in Sources */,
+				F1CA3F761648413300D240C7 /* LoginViewController.m in Sources */,
+				F1CA3F84164862A100D240C7 /* Usuario.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

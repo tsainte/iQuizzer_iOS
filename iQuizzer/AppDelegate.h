@@ -16,6 +16,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (readonly) BOOL isAuth;  //informa se o usuário está autenticado
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
