@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "ListaQuizzesViewController.h"
+#import "CriarQuizViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -38,7 +39,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 3;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell* cell = [[UITableViewCell alloc]init];
@@ -47,15 +48,12 @@
             cell.textLabel.text = @"Jogar";
             break;
         case 1:
-            cell.textLabel.text = @"Meus quizzes";
+            cell.textLabel.text = @"Quizzes";
             break;
         case 2:
-            cell.textLabel.text = @"Obter mais";
-            break;
-        case 3:
             cell.textLabel.text = @"Pontuações";
             break;
-        case 4:
+        case 3:
             cell.textLabel.text = @"Sobre";
             break;
         default:
@@ -67,10 +65,10 @@
 
     switch (indexPath.row) {
         case 0:
-            [self lista];
+            
             break;
         case 1:
-            
+            [self showActionSheet];
             break;
         case 2:
             
@@ -85,5 +83,30 @@
 -(void) lista{
     ListaQuizzesViewController* listaView = [[ListaQuizzesViewController alloc] initWithNibName:@"ListaQuizzesViewController" bundle:nil];
     [self.navigationController pushViewController:listaView animated:YES];
+}
+-(void)showActionSheet{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Quizzes" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Meus quizzes", @"Baixar", @"Criar", nil];
+    [actionSheet showInView:self.view];
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            [self lista];
+            break;
+        case 1:
+            break;
+        case 2:
+            [self quiz];
+        default:
+            break;
+    }
+}
+-(void)quiz{
+    CriarQuizViewController* cq =[[CriarQuizViewController alloc] initWithNibName:@"CriarQuizViewController" bundle:nil];
+    [self.navigationController pushViewController:cq animated:YES];
+}
+//TODO
+-(void)redirect:(NSString*)viewController{
+    //Class class = NSClassFromString(viewController);
 }
 @end

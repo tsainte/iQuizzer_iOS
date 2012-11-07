@@ -32,4 +32,7 @@
     }
     return quizzes;
 }
+-(NSArray*)findAllFromLocal{
+    
+}
 @end
