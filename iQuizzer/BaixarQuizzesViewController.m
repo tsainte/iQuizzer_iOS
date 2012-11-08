@@ -1,19 +1,19 @@
 //
-//  ListaQuizzesViewController.m
+//  BaixarQuizzesViewController.m
 //  iQuizzer
 //
-//  Created by Tiago Bencardino on 05/11/12.
+//  Created by Tiago Bencardino on 07/11/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
-#import "ListaQuizzesViewController.h"
-#import "QuizDAO.h"
+#import "BaixarQuizzesViewController.h"
 #import "Quiz.h"
-@interface ListaQuizzesViewController ()
+#import "QuizDAO.h"
+@interface BaixarQuizzesViewController ()
 
 @end
 
-@implementation ListaQuizzesViewController
+@implementation BaixarQuizzesViewController
 @synthesize quizzes = _quizzes;
 
 -(void)setQuizzes:(NSArray *)quizzes{
@@ -21,7 +21,8 @@
 }
 -(NSArray*)quizzes{
     if (!_quizzes){
-        _quizzes = [[NSArray alloc] initWithArray:[QuizDAO findAllFromServer]];
+        QuizDAO* dao = [[QuizDAO alloc] init];
+        _quizzes = [[NSArray alloc] initWithArray:[dao findAllFromServer]];
         
     }
     return _quizzes;

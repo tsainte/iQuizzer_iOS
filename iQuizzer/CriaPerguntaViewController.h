@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PerguntaDAO.h"
 @interface CriaPerguntaViewController : UIViewController
-
+@property (strong) PerguntaDAO* perguntaDAO;
 @end

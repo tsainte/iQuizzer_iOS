@@ -9,11 +9,11 @@
 #import "WebService.h"
 
 @implementation WebService
-//static NSString *const ip = @"localhost";
-//static int port = 3000;
+static NSString *const ip = @"localhost";
+static int port = 3000;
 
-static NSString *const ip = @"iquizzer.herokuapp.com";
-static int port = 80;
+//static NSString *const ip = @"iquizzer.herokuapp.com";
+//static int port = 80;
 +(NSData*)getAll:(NSString*)parameters{
     NSString* urlString = [NSString stringWithFormat:@"http://%@:%d/%@", ip,port,parameters];
     NSURL* url = [NSURL URLWithString:urlString];
@@ -30,7 +30,7 @@ static int port = 80;
     
     [theRequest setHTTPBody: body];
     [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
+    [theRequest setHTTPMethod:method];
     
     //make connection
     NSURLConnection *theConnection = [[NSURLConnection alloc]initWithRequest:theRequest delegate:self];

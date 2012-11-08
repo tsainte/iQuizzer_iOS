@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface PerguntaDAO : NSObject
+#import "Quiz.h"
+#import "DAO.h"
+@interface PerguntaDAO : DAO
 
 @end

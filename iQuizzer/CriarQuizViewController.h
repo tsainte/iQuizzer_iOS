@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Quiz.h"
+#import "QuizDAO.h"
+#import "PerguntaDAO.h"
 
-@interface CriarQuizViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CriarQuizViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+
 @property (strong, nonatomic) IBOutlet UITextField *titulo;
-
+@property (strong) Quiz* quiz;
 @property (strong) NSArray* perguntas;
+@property (strong) QuizDAO* quizDAO;
+@property (strong) PerguntaDAO* perguntaDAO;
+@property (strong) NSManagedObjectContext* context;
+
 - (IBAction)addQuestion:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)delete:(id)sender;

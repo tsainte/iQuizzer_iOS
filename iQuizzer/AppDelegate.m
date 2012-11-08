@@ -90,7 +90,15 @@
     }
     return _managedObjectContext;
 }
-
+- (NSManagedObjectContext *)anotherManagedObjectContext{
+    NSManagedObjectContext *context;
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+       context = [[NSManagedObjectContext alloc] init];
+        [context setPersistentStoreCoordinator:coordinator];
+    }
+    return context;
+}
 // Returns the managed object model for the application.
 // If the model doesn't already exist, it is created from the application's model.
 - (NSManagedObjectModel *)managedObjectModel

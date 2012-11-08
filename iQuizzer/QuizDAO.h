@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DAO.h"
+#import "Quiz.h"
+@interface QuizDAO : DAO
 
-@interface QuizDAO : NSObject
-+(NSArray*)findAllFromServer;
+-(NSArray*)findAllFromServer;
+-(Quiz*)createQuizWithTitulo:(NSString*)titulo;
+-(void)saveOnCloud:(Quiz*)quiz;
 @end

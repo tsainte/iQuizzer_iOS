@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController.h"
-#import "ListaQuizzesViewController.h"
+#import "BaixarQuizzesViewController.h"
 #import "CriarQuizViewController.h"
 @interface MenuViewController ()
 
@@ -81,7 +81,7 @@
     }
 }
 -(void) lista{
-    ListaQuizzesViewController* listaView = [[ListaQuizzesViewController alloc] initWithNibName:@"ListaQuizzesViewController" bundle:nil];
+    BaixarQuizzesViewController* listaView = [[BaixarQuizzesViewController alloc] initWithNibName:@"BaixarQuizzesViewController" bundle:nil];
     [self.navigationController pushViewController:listaView animated:YES];
 }
 -(void)showActionSheet{
@@ -91,9 +91,10 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (buttonIndex) {
         case 0:
-            [self lista];
+            
             break;
         case 1:
+            [self lista];
             break;
         case 2:
             [self quiz];

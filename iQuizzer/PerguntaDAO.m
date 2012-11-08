@@ -9,5 +9,7 @@
 #import "PerguntaDAO.h"
 
 @implementation PerguntaDAO
-
+-(void)setEntity{
+    entity = @"Pergunta";
+}
 @end

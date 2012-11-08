@@ -19,5 +19,6 @@
 @property (readonly) BOOL isAuth;  //informa se o usuário está autenticado
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (NSManagedObjectContext *)anotherManagedObjectContext;
 
 @end
