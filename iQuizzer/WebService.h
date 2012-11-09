@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface WebService : NSObject
-+(NSData*)getAll:(NSString*)parameters;
++(NSData*)get:(NSString*)parameters;
 +(void)RESTCommand:(NSString*)parameters HTTPMethod:(NSString*)method jsonBody:(NSData*)body;
 @end

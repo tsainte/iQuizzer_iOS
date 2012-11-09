@@ -14,4 +14,6 @@
 -(NSArray*)findAllFromServer;
 -(Quiz*)createQuizWithTitulo:(NSString*)titulo;
 -(void)saveOnCloud:(Quiz*)quiz;
+-(BOOL)downloadQuiz:(NSNumber*)ID;
+-(Quiz*)find:(NSNumber*)index;
 @end

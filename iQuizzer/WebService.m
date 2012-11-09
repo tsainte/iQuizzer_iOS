@@ -14,7 +14,7 @@ static int port = 3000;
 
 //static NSString *const ip = @"iquizzer.herokuapp.com";
 //static int port = 80;
-+(NSData*)getAll:(NSString*)parameters{
++(NSData*)get:(NSString*)parameters{
     NSString* urlString = [NSString stringWithFormat:@"http://%@:%d/%@", ip,port,parameters];
     NSURL* url = [NSURL URLWithString:urlString];
     NSData* data = [NSData dataWithContentsOfURL:url];

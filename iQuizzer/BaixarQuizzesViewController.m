@@ -8,30 +8,34 @@
 
 #import "BaixarQuizzesViewController.h"
 #import "Quiz.h"
-#import "QuizDAO.h"
+
+#import "BuyCell.h"
 @interface BaixarQuizzesViewController ()
 
 @end
 
 @implementation BaixarQuizzesViewController
-@synthesize quizzes = _quizzes;
+@synthesize quizzes = _quizzes, dao;
+@synthesize tv;
 
 -(void)setQuizzes:(NSArray *)quizzes{
     _quizzes = quizzes;
 }
 -(NSArray*)quizzes{
     if (!_quizzes){
-        QuizDAO* dao = [[QuizDAO alloc] init];
+        
         _quizzes = [[NSArray alloc] initWithArray:[dao findAllFromServer]];
         
     }
     return _quizzes;
 }
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        dao = [[QuizDAO alloc] init];
     }
     return self;
 }
@@ -54,9 +58,38 @@
     return [self.quizzes count];
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell* cell = [[UITableViewCell alloc] init];
+    static NSString* cellIdentifier = @"BuyCell";
+    static NSString* cellNib = @"BuyCell";
+    
+    BuyCell* cell = (BuyCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil){
+        NSArray* nib = [[NSBundle mainBundle] loadNibNamed:cellNib owner:self options:nil];
+        cell = (BuyCell*) [nib objectAtIndex:0];
+    }
     Quiz* q = [self.quizzes objectAtIndex:indexPath.row];
-    cell.textLabel.text = [q titulo];
+
+    cell.titulo.text = q.titulo;
+    [self configureButton:cell.btnAction forID:q.index];
     return cell;
 }
+- (IBAction)comprar:(id)sender {
+    BuyCell* cell = (BuyCell*)[[sender superview] superview];
+    NSIndexPath* indexPath = [tv indexPathForCell:cell];
+    
+    Quiz* q = [self.quizzes objectAtIndex:indexPath.row];
+    if ([dao downloadQuiz:q.index]){
+        [self configureButton:cell.btnAction forID:q.index];
+    }
+}
+-(void)configureButton:(UIButton*)button forID:(NSNumber*)index{
+    if ([dao find:index]){ //se encontrar algum quiz
+        [button setTitle:@"Instalado" forState:UIControlStateNormal];
+        [button setEnabled:NO];
+        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    } else {
+        [button setTitle:@"Baixar" forState:UIControlStateNormal];
+        [button setEnabled:YES];
+    }
+}
+
 @end

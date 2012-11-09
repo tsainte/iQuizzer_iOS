@@ -26,6 +26,15 @@
     }
     return self;
 }
+-(NSArray*)findAllFromLocal{
+    //condições de consulta - findAll
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    
+    [fetchRequest setEntity:entityDescription];
+    //execução da consulta
+    NSError* error;
+    return [managedContext executeFetchRequest:fetchRequest error:&error];
+}
 -(BOOL)saveContext{
     NSError* error;
     BOOL wSuccess = [managedContext save:&error];

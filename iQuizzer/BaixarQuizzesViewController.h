@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "QuizDAO.h"
 @interface BaixarQuizzesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong) NSArray* quizzes;
+@property (strong) QuizDAO* dao;
+@property (strong, nonatomic) IBOutlet UITableView *tv;
+
+- (IBAction)comprar:(id)sender;
 
 
 @end

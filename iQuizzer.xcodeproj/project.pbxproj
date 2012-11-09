@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F14E9D94164BE8BE0015D72B /* BuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9D93164BE8BE0015D72B /* BuyCell.m */; };
+		F14E9D96164D12780015D72B /* BuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D95164D12780015D72B /* BuyCell.xib */; };
+		F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */; };
+		F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */; };
 		F1CA3F3D164813D300D240C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CA3F3C164813D300D240C7 /* UIKit.framework */; };
 		F1CA3F3F164813D300D240C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CA3F3E164813D300D240C7 /* Foundation.framework */; };
 		F1CA3F41164813D300D240C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CA3F40164813D300D240C7 /* CoreGraphics.framework */; };
@@ -31,8 +35,6 @@
 		F1CA3FB11649974700D240C7 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FB01649974600D240C7 /* Quiz.m */; };
 		F1CA3FB51649BDD000D240C7 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FB31649BDCC00D240C7 /* GameViewController.m */; };
 		F1CA3FB61649BDD000D240C7 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3FB41649BDD000D240C7 /* GameViewController.xib */; };
-		F1CA3FBA1649C3BD00D240C7 /* QuizzesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FB81649C3B900D240C7 /* QuizzesViewController.m */; };
-		F1CA3FBB1649C3BD00D240C7 /* QuizzesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3FB91649C3BB00D240C7 /* QuizzesViewController.xib */; };
 		F1F5AB44164AE28D009E7057 /* CriarQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */; };
 		F1F5AB45164AE28D009E7057 /* CriarQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */; };
 		F1F5AB4A164B0A79009E7057 /* CriaPerguntaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F5AB48164B0A79009E7057 /* CriaPerguntaViewController.m */; };
@@ -45,6 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F14E9D92164BE8BE0015D72B /* BuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyCell.h; sourceTree = "<group>"; };
+		F14E9D93164BE8BE0015D72B /* BuyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyCell.m; sourceTree = "<group>"; };
+		F14E9D95164D12780015D72B /* BuyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyCell.xib; sourceTree = "<group>"; };
+		F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeusQuizzesViewController.h; sourceTree = "<group>"; };
+		F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeusQuizzesViewController.m; sourceTree = "<group>"; };
+		F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeusQuizzesViewController.xib; sourceTree = "<group>"; };
 		F1CA3F38164813D300D240C7 /* iQuizzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuizzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CA3F3C164813D300D240C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F1CA3F3E164813D300D240C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,9 +90,6 @@
 		F1CA3FB21649BDCA00D240C7 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		F1CA3FB31649BDCC00D240C7 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		F1CA3FB41649BDD000D240C7 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
-		F1CA3FB71649C3B800D240C7 /* QuizzesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizzesViewController.h; sourceTree = "<group>"; };
-		F1CA3FB81649C3B900D240C7 /* QuizzesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizzesViewController.m; sourceTree = "<group>"; };
-		F1CA3FB91649C3BB00D240C7 /* QuizzesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizzesViewController.xib; sourceTree = "<group>"; };
 		F1F5AB41164AE28D009E7057 /* CriarQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CriarQuizViewController.h; sourceTree = "<group>"; };
 		F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CriarQuizViewController.m; sourceTree = "<group>"; };
 		F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CriarQuizViewController.xib; sourceTree = "<group>"; };
@@ -117,6 +122,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F14E9D90164BE87B0015D72B /* Auxiliar views */ = {
+			isa = PBXGroup;
+			children = (
+				F14E9D92164BE8BE0015D72B /* BuyCell.h */,
+				F14E9D93164BE8BE0015D72B /* BuyCell.m */,
+				F14E9D95164D12780015D72B /* BuyCell.xib */,
+			);
+			name = "Auxiliar views";
+			sourceTree = "<group>";
+		};
 		F1CA3F2D164813D300D240C7 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +164,7 @@
 		F1CA3F44164813D300D240C7 /* iQuizzer */ = {
 			isa = PBXGroup;
 			children = (
+				F14E9D90164BE87B0015D72B /* Auxiliar views */,
 				F1CA3F95164991B900D240C7 /* Model */,
 				F1CA3F9416498E4F00D240C7 /* Util */,
 				F1CA3F8C16498DCF00D240C7 /* ViewControllers */,
@@ -186,9 +202,6 @@
 				F1CA3FB21649BDCA00D240C7 /* GameViewController.h */,
 				F1CA3FB31649BDCC00D240C7 /* GameViewController.m */,
 				F1CA3FB41649BDD000D240C7 /* GameViewController.xib */,
-				F1CA3FB71649C3B800D240C7 /* QuizzesViewController.h */,
-				F1CA3FB81649C3B900D240C7 /* QuizzesViewController.m */,
-				F1CA3FB91649C3BB00D240C7 /* QuizzesViewController.xib */,
 				F1F5AB41164AE28D009E7057 /* CriarQuizViewController.h */,
 				F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */,
 				F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */,
@@ -198,6 +211,9 @@
 				F1F5AB55164B4C68009E7057 /* BaixarQuizzesViewController.h */,
 				F1F5AB56164B4C69009E7057 /* BaixarQuizzesViewController.m */,
 				F1F5AB57164B4C6A009E7057 /* BaixarQuizzesViewController.xib */,
+				F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */,
+				F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */,
+				F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -309,10 +325,11 @@
 				F1CA3F771648413300D240C7 /* LoginViewController.xib in Resources */,
 				F1CA3F79164841C100D240C7 /* facebook.png in Resources */,
 				F1CA3FB61649BDD000D240C7 /* GameViewController.xib in Resources */,
-				F1CA3FBB1649C3BD00D240C7 /* QuizzesViewController.xib in Resources */,
 				F1F5AB45164AE28D009E7057 /* CriarQuizViewController.xib in Resources */,
 				F1F5AB4B164B0A79009E7057 /* CriaPerguntaViewController.xib in Resources */,
 				F1F5AB59164B4C6A009E7057 /* BaixarQuizzesViewController.xib in Resources */,
+				F14E9D96164D12780015D72B /* BuyCell.xib in Resources */,
+				F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,13 +352,14 @@
 				F1CA3FAB1649941F00D240C7 /* Pergunta.m in Sources */,
 				F1CA3FB11649974700D240C7 /* Quiz.m in Sources */,
 				F1CA3FB51649BDD000D240C7 /* GameViewController.m in Sources */,
-				F1CA3FBA1649C3BD00D240C7 /* QuizzesViewController.m in Sources */,
 				F1F5AB44164AE28D009E7057 /* CriarQuizViewController.m in Sources */,
 				F1F5AB4A164B0A79009E7057 /* CriaPerguntaViewController.m in Sources */,
 				F1F5AB4E164B199D009E7057 /* PerguntaDAO.m in Sources */,
 				F1F5AB51164B19B5009E7057 /* RespostaDAO.m in Sources */,
 				F1F5AB54164B20F8009E7057 /* DAO.m in Sources */,
 				F1F5AB58164B4C6A009E7057 /* BaixarQuizzesViewController.m in Sources */,
+				F14E9D94164BE8BE0015D72B /* BuyCell.m in Sources */,
+				F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

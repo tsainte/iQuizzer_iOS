@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "BaixarQuizzesViewController.h"
 #import "CriarQuizViewController.h"
+#import "MeusQuizzesViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -80,18 +81,16 @@
             break;
     }
 }
--(void) lista{
-    BaixarQuizzesViewController* listaView = [[BaixarQuizzesViewController alloc] initWithNibName:@"BaixarQuizzesViewController" bundle:nil];
-    [self.navigationController pushViewController:listaView animated:YES];
-}
+
 -(void)showActionSheet{
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Quizzes" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Meus quizzes", @"Baixar", @"Criar", nil];
     [actionSheet showInView:self.view];
 }
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    //TODO REFATORAR
     switch (buttonIndex) {
         case 0:
-            
+            [self meusQuizzes];
             break;
         case 1:
             [self lista];
@@ -102,6 +101,14 @@
             break;
     }
 }
+-(void) lista{
+    BaixarQuizzesViewController* listaView = [[BaixarQuizzesViewController alloc] initWithNibName:@"BaixarQuizzesViewController" bundle:nil];
+    [self.navigationController pushViewController:listaView animated:YES];
+}
+-(void) meusQuizzes{
+    MeusQuizzesViewController* listaView = [[MeusQuizzesViewController alloc] initWithNibName:@"MeusQuizzesViewController" bundle:nil];
+    [self.navigationController pushViewController:listaView animated:YES];
+}
 -(void)quiz{
     CriarQuizViewController* cq =[[CriarQuizViewController alloc] initWithNibName:@"CriarQuizViewController" bundle:nil];
     [self.navigationController pushViewController:cq animated:YES];
@@ -109,5 +116,6 @@
 //TODO
 -(void)redirect:(NSString*)viewController{
     //Class class = NSClassFromString(viewController);
+    
 }
 @end

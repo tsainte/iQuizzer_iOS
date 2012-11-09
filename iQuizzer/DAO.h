@@ -11,6 +11,7 @@
 @interface DAO : NSObject{
     NSString* entity;
     NSManagedObjectContext* managedContext;
+    NSEntityDescription *entityDescription;
 }
 @property (strong) NSString* entity;
 @property (strong) NSManagedObjectContext* managedContext;
@@ -20,4 +21,5 @@
 -(BOOL)saveContext;
 -(void)setEntity;
 +(NSManagedObjectContext*)anotherManagedContext;
+-(NSArray*)findAllFromLocal;
 @end
