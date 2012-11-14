@@ -35,6 +35,7 @@
     [fetchRequest setEntity:entityDescription];
     //execução da consulta
     NSError* error;
+    
     return [managedContext executeFetchRequest:fetchRequest error:&error];
 }
 -(BOOL)saveContext{

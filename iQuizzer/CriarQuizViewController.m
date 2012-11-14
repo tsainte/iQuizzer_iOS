@@ -31,10 +31,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _context = [DAO anotherManagedContext];
-        quizDAO = [[QuizDAO alloc] initWithContext:_context];
+        //TODO rever esse "context"
+        //_context = [DAO anotherManagedContext];
+        //quizDAO = [[QuizDAO alloc] initWithContext:_context];
         perguntaDAO = [[PerguntaDAO alloc] initWithContext:_context];
         
+        quizDAO = [[QuizDAO alloc] init];
         Quiz* auxQuiz = [quizDAO createQuizWithTitulo:titulo.text];
         if (quiz){ //se nao existir quiz, crie um!
             auxQuiz.titulo = quiz.titulo;
@@ -66,11 +68,11 @@
     cp.perguntaDAO = perguntaDAO;
     [self.navigationController pushViewController:cp animated:YES];
 }
-
+//TODO logica deve ir para o DAO
 - (IBAction)save:(id)sender {
     quiz.titulo = titulo.text;
     NSError* error;
-    if (![_context save:&error]){
+    if (![quizDAO.managedContext save:&error]){
         NSLog(@"%@", [error description]);
     } else { //se tudo ok, envia pra nuvem
         [quizDAO saveOnCloud:quiz];
@@ -80,6 +82,7 @@
 }
 
 - (IBAction)delete:(id)sender {
+    //TODO apagar quiz do coredata
     [quizDAO remove:quiz];
     
 }

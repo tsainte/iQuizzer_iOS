@@ -88,6 +88,7 @@
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     } else {
         [button setTitle:@"Baixar" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [button setEnabled:YES];
     }
 }

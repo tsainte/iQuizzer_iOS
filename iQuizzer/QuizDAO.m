@@ -130,4 +130,21 @@ Quiz* currentQuiz;
     return [self saveContext];
 
 }
+-(NSArray*)findAllFromLocal{
+    //condições de consulta - findAll
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    
+    [fetchRequest setEntity:entityDescription];
+    //execução da consulta
+    NSError* error;
+    
+    //esse codigo eh gambiarra
+    NSMutableArray* wReturn = [[NSMutableArray alloc] init];
+    for (Quiz* q in [managedContext executeFetchRequest:fetchRequest error:&error]){
+        if ([q.index intValue] > 0){
+            [wReturn addObject:q];
+        }
+    }
+    return wReturn;
+}
 @end
