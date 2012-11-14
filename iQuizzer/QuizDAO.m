@@ -15,7 +15,7 @@
 
 -(NSArray*)findAllFromServer{
 
-    NSData* jsonData = [WebService get:@"quizzes.json"];
+    NSData* jsonData = [webService get:@"quizzes.json"];
     NSError* error;
     NSArray* jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
@@ -71,17 +71,40 @@
         [self create:quiz];
     }
 }
+Quiz* currentQuiz;
 -(void)create:(Quiz*)quiz{
     NSString* parameters = @"quizzes";
     NSString* method = @"POST";
     NSData* body = [self createBody:quiz];
-    [WebService RESTCommand:parameters HTTPMethod:method jsonBody:body];
+    
+    currentQuiz = quiz;
+    [webService RESTCommand:parameters HTTPMethod:method jsonBody:body onFinishObj:self onFinishSel:@selector(atualizarID:)];
+    
+}
+-(void)atualizarID:(NSData*)jsonData{
+    NSError* error;
+    NSDictionary* jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    
+    NSLog(@"the id: %@", [[jsonObj objectForKey:@"id"] description]);
+    currentQuiz.index = [jsonObj objectForKey:@"id"];
+    [self saveContext];
+    /*
+    Quiz* quiz = [[Quiz alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedContext];
+    
+    quiz.titulo = [jsonObj objectForKey:@"titulo"];
+    quiz.index = [jsonObj objectForKey:@"id"];*/
 }
 -(void)update:(Quiz*)quiz{
-    NSString* parameters = @"quizzes/id"; //TODO REFAZER O ID..
+    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]];
     NSString* method = @"PUT";
     NSData* body = [self createBody:quiz];
-    [WebService RESTCommand:parameters HTTPMethod:method jsonBody:body];
+    [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];
+}
+-(void)remove:(Quiz*)quiz{
+    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]];
+    NSString* method = @"DELETE";
+    NSData* body = [self createBody:quiz];
+    [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];
 }
 -(NSData*)createBody:(Quiz*)quiz{
     NSArray* objects = [[NSArray alloc] initWithObjects:quiz.index.description, quiz.titulo, nil];
@@ -91,10 +114,11 @@
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict options:kNilOptions error:nil];
     
     return jsonData;
-} 
+}
+
 -(BOOL)downloadQuiz:(NSNumber*)ID{
     NSString* param = [NSString stringWithFormat:@"%@/%d.json", @"quizzes", [ID intValue]];
-    NSData* jsonData = [WebService get:param];
+    NSData* jsonData = [webService get:param];
     NSError* error;
     NSDictionary* jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     

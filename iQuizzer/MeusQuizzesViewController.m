@@ -8,12 +8,14 @@
 
 #import "MeusQuizzesViewController.h"
 #import "QuizDAO.h"
+#import "CriarQuizViewController.h"
 @interface MeusQuizzesViewController ()
 
 @end
 
 @implementation MeusQuizzesViewController
 @synthesize quizzes = _quizzes;
+@synthesize tv;
 
 -(void)setQuizzes:(NSArray *)quizzes{
     _quizzes = quizzes;
@@ -41,6 +43,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+-(void)viewWillAppear:(BOOL)animated{
+    self.quizzes = nil;
+    [tv reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -54,8 +60,6 @@
     return [self.quizzes count];
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil){
         cell = [[UITableViewCell alloc] init];
@@ -65,5 +69,11 @@
     cell.textLabel.text = [q titulo];
     //cell.btnAction.titleLabel.text = @"Baixar"; //isso deve vir de uma funcao que verifica se ja tem o quiz
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Quiz* q = [self.quizzes objectAtIndex:indexPath.row];
+    CriarQuizViewController* cq = [[CriarQuizViewController alloc] initWithNibName:@"CriarQuizViewController" bundle:nil];
+    cq.quiz = q;
+    [self.navigationController pushViewController:cq animated:YES];
 }
 @end

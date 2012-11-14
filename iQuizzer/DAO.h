@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "WebService.h"
 @interface DAO : NSObject{
     NSString* entity;
     NSManagedObjectContext* managedContext;
     NSEntityDescription *entityDescription;
+    WebService* webService;
 }
+@property (strong) WebService* webService;
 @property (strong) NSString* entity;
 @property (strong) NSManagedObjectContext* managedContext;
 

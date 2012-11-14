@@ -35,9 +35,13 @@
         quizDAO = [[QuizDAO alloc] initWithContext:_context];
         perguntaDAO = [[PerguntaDAO alloc] initWithContext:_context];
         
-        if (!quiz){ //se nao existir quiz, crie um!
-            quiz = [quizDAO createQuizWithTitulo:titulo.text];
+        Quiz* auxQuiz = [quizDAO createQuizWithTitulo:titulo.text];
+        if (quiz){ //se nao existir quiz, crie um!
+            auxQuiz.titulo = quiz.titulo;
+            auxQuiz.index = quiz.index;
         }
+        quiz = auxQuiz;
+ 
     }
     return self;
 }
@@ -46,6 +50,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    titulo.text = quiz.titulo;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,12 +72,16 @@
     NSError* error;
     if (![_context save:&error]){
         NSLog(@"%@", [error description]);
+    } else { //se tudo ok, envia pra nuvem
+        [quizDAO saveOnCloud:quiz];
+        [self.navigationController popViewControllerAnimated:YES];
+        
     }
-    [quizDAO saveOnCloud:quiz];
-
 }
 
 - (IBAction)delete:(id)sender {
+    [quizDAO remove:quiz];
+    
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

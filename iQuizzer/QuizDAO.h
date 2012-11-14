@@ -16,4 +16,5 @@
 -(void)saveOnCloud:(Quiz*)quiz;
 -(BOOL)downloadQuiz:(NSNumber*)ID;
 -(Quiz*)find:(NSNumber*)index;
+-(void)remove:(Quiz*)quiz;
 @end

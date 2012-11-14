@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MeusQuizzesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tv;
 @property (strong) NSArray* quizzes;
 @end

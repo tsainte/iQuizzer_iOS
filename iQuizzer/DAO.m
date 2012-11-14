@@ -10,12 +10,13 @@
 #import "AppDelegate.h"
 
 @implementation DAO
-@synthesize managedContext, entity;
+@synthesize managedContext, entity, webService;
 
 -(id)initWithContext:(NSManagedObjectContext*)context{
     if (self = [super init]){
         self.managedContext = context;
         [self setEntity];
+        webService = [[WebService alloc] init];
     }
     return self;
 }
@@ -23,6 +24,7 @@
     if (self = [super init]){
         self.managedContext = [(AppDelegate*)([[UIApplication sharedApplication] delegate]) managedObjectContext];
         [self setEntity];
+        webService = [[WebService alloc] init];
     }
     return self;
 }
