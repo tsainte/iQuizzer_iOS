@@ -83,7 +83,7 @@
 
 - (IBAction)delete:(id)sender {
     //TODO apagar quiz do coredata
-    [quizDAO remove:quiz];
+    [self alertOKCancelAction];
     
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -98,5 +98,19 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
+}
+- (void)alertOKCancelAction {
+    // open a alert with an OK and cancel button
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iQuizzer" message:@"Você tem certeza que deseja apagar este quiz?" delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
+    [alert show];
+}
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // the user clicked one of the OK/Cancel buttons
+    if (buttonIndex == 1)
+    {
+        [quizDAO remove:quiz];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+
 }
 @end

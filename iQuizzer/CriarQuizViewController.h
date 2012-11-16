@@ -11,7 +11,7 @@
 #import "QuizDAO.h"
 #import "PerguntaDAO.h"
 
-@interface CriarQuizViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface CriarQuizViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *titulo;
 @property (strong) Quiz* quiz;

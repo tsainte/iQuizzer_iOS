@@ -88,11 +88,6 @@ Quiz* currentQuiz;
     NSLog(@"the id: %@", [[jsonObj objectForKey:@"id"] description]);
     currentQuiz.index = [jsonObj objectForKey:@"id"];
     [self saveContext];
-    /*
-    Quiz* quiz = [[Quiz alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedContext];
-    
-    quiz.titulo = [jsonObj objectForKey:@"titulo"];
-    quiz.index = [jsonObj objectForKey:@"id"];*/
 }
 -(void)update:(Quiz*)quiz{
     NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]];
@@ -101,10 +96,17 @@ Quiz* currentQuiz;
     [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];
 }
 -(void)remove:(Quiz*)quiz{
+   //apagando do servidor
     NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]];
     NSString* method = @"DELETE";
     NSData* body = [self createBody:quiz];
     [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];
+    
+    //apagando local
+    [managedContext deleteObject:quiz];
+    [self saveContext];
+    
+    
 }
 -(NSData*)createBody:(Quiz*)quiz{
     NSArray* objects = [[NSArray alloc] initWithObjects:quiz.index.description, quiz.titulo, nil];
