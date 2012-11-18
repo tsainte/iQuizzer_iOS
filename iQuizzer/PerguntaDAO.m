@@ -40,6 +40,16 @@
     [self createPerguntaWithConteudo:conteudo];
     return [self saveContext];
 }
+
+-(void)downloadJSONPerguntas:(NSArray*)jsonPerguntas forQuiz:(Quiz*)quiz{
+    for (NSDictionary* jsonPergunta in jsonPerguntas){
+        Pergunta* pergunta = [NSEntityDescription insertNewObjectForEntityForName:entity inManagedObjectContext:managedContext];
+        pergunta.conteudo = [jsonPergunta objectForKey:@"conteudo"];
+        pergunta.id = [jsonPergunta objectForKey:@"id"];
+        pergunta.quiz = quiz;
+        [self saveContext];
+    }
+}
 -(void)saveOnCloud:(Pergunta*)pergunta{
 
     if ([pergunta.id intValue] > 0) { //update, e TODO refazer gamba

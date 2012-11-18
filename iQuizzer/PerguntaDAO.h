@@ -13,4 +13,5 @@
 -(Pergunta*)createPerguntaWithConteudo:(NSString*)conteudo;
 -(void)saveOnCloud:(Pergunta*)pergunta;
 -(NSArray*)findFromQuiz:(Quiz*)quiz;
+-(void)downloadJSONPerguntas:(NSArray*)jsonPerguntas forQuiz:(Quiz*)quiz;
 @end

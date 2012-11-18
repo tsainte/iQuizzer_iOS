@@ -10,6 +10,7 @@
 #import "WebService.h"
 #import "AppDelegate.h"
 #import "Quiz.h"
+#import "PerguntaDAO.h"
 
 @implementation QuizDAO
 
@@ -131,11 +132,16 @@ Quiz* currentQuiz;
     NSError* error;
     NSDictionary* jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
+    NSDictionary* jsonQuiz = [jsonObj objectForKey:@"quiz"];
+    
     Quiz* quiz = [[Quiz alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedContext];
 
-    quiz.titulo = [jsonObj objectForKey:@"titulo"];
-    quiz.index = [jsonObj objectForKey:@"id"];
+    quiz.titulo = [jsonQuiz objectForKey:@"titulo"];
+    quiz.index = [jsonQuiz objectForKey:@"id"];
 
+    PerguntaDAO* perguntaDAO = [[PerguntaDAO alloc] init];
+    [perguntaDAO downloadJSONPerguntas:[jsonObj objectForKey:@"perguntas"] forQuiz:quiz];
+    
     return [self saveContext];
 
 }
