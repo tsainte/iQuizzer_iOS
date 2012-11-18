@@ -71,7 +71,9 @@
         [self create:quiz];
     }
 }
+
 Quiz* currentQuiz;
+
 -(void)create:(Quiz*)quiz{
     NSString* parameters = @"quizzes";
     NSString* method = @"POST";
@@ -109,18 +111,23 @@ Quiz* currentQuiz;
     
 }
 -(NSData*)createBody:(Quiz*)quiz{
-    NSArray* objects = [[NSArray alloc] initWithObjects:quiz.index.description, quiz.titulo, nil];
-    NSArray* keys = [[NSArray alloc] initWithObjects:@"id",@"titulo", nil]; //chaves do app server
-    
-    NSDictionary* jsonDict = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    NSDictionary* jsonDict = [QuizDAO createDictionary:quiz];
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict options:kNilOptions error:nil];
     
     return jsonData;
 }
-
++(NSMutableDictionary*)createDictionary:(Quiz*)quiz{
+    NSArray* objects = [[NSArray alloc] initWithObjects:quiz.index.description, quiz.titulo, nil];
+    NSArray* keys = [[NSArray alloc] initWithObjects:@"id",@"titulo", nil]; //chaves do app server
+    
+    NSMutableDictionary* jsonDict = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
+    return jsonDict;
+}
 -(BOOL)downloadQuiz:(NSNumber*)ID{
     NSString* param = [NSString stringWithFormat:@"%@/%d.json", @"quizzes", [ID intValue]];
     NSData* jsonData = [webService get:param];
+    
+    
     NSError* error;
     NSDictionary* jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
@@ -148,5 +155,38 @@ Quiz* currentQuiz;
         }
     }
     return wReturn;
+}
+//teste para inserir pergunta
+-(NSData*)createBody2:(Quiz*)quiz{
+    //respostas
+    NSArray* o2 = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:7],@"respostaa teste deu certo e eu alterei!", nil];
+    NSArray* k2 = [[NSArray alloc] initWithObjects:@"id",@"conteudo", nil];
+    
+    NSDictionary* resposta = [[NSDictionary alloc] initWithObjects:o2 forKeys:k2];
+    NSArray* respostas = [[NSArray alloc] initWithObjects:resposta, nil];
+    
+    
+    //perguntas
+    NSArray* o1 = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:10],@"pergunta1 teste deu certo e eu alterei!", respostas, nil];
+    NSArray* k1 = [[NSArray alloc] initWithObjects:@"id",@"conteudo", @"respostas_attributes", nil];
+    
+  //  NSArray* o1 = [[NSArray alloc] initWithObjects:@"pergunta1 teste deu certo!", nil];
+  //  NSArray* k1 = [[NSArray alloc] initWithObjects:@"conteudo", nil];
+    
+    
+    NSDictionary* pergunta = [[NSDictionary alloc] initWithObjects:o1 forKeys:k1];
+    NSArray* perguntas = [[NSArray alloc] initWithObjects:pergunta, nil];
+    
+    
+    NSArray* objects = [[NSArray alloc] initWithObjects:quiz.index.description, quiz.titulo, perguntas, nil];
+    NSArray* keys = [[NSArray alloc] initWithObjects:@"id",@"titulo",@"perguntas_attributes", nil]; //chaves do app server
+    
+    NSDictionary* jsonDict = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict options:kNilOptions error:nil];
+    
+    NSString* str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"json: %@",str);
+    
+    return jsonData;
 }
 @end

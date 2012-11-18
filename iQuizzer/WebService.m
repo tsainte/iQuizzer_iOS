@@ -63,6 +63,7 @@ NSMutableData* receivedData;
     // do something with the data
     // receivedData is declared as a method instance elsewhere
     NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
+    NSLog(@"content: %@", [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding]);
     if (hasCallback){
         [finishObj performSelector:finishSel withObject:receivedData];
         hasCallback= NO;

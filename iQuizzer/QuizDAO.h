@@ -17,4 +17,5 @@
 -(BOOL)downloadQuiz:(NSNumber*)ID;
 -(Quiz*)find:(NSNumber*)index;
 -(void)remove:(Quiz*)quiz;
++(NSMutableDictionary*)createDictionary:(Quiz*)quiz;
 @end

@@ -14,11 +14,13 @@
 @interface CriarQuizViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *titulo;
+
 @property (strong) Quiz* quiz;
 @property (strong) NSArray* perguntas;
 @property (strong) QuizDAO* quizDAO;
 @property (strong) PerguntaDAO* perguntaDAO;
 @property (strong) NSManagedObjectContext* context;
+@property (strong, nonatomic) IBOutlet UITableView *tv;
 
 - (IBAction)addQuestion:(id)sender;
 - (IBAction)save:(id)sender;

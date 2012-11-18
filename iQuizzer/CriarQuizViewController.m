@@ -14,7 +14,7 @@
 @end
 
 @implementation CriarQuizViewController
-@synthesize titulo;
+@synthesize titulo, tv;
 @synthesize perguntas = _perguntas;
 @synthesize quiz, quizDAO, perguntaDAO;
 -(void)setPerguntas:(NSArray *)perguntas{
@@ -22,8 +22,7 @@
 }
 -(NSArray*)perguntas{
     if (!_perguntas){
-        //_perguntas = [[NSArray alloc] initWithArray:[QuizDAO findAllFromServer]];
-        
+        _perguntas = [[NSArray alloc] initWithArray:[perguntaDAO findFromQuiz:quiz]];
     }
     return _perguntas;
 }
@@ -34,9 +33,10 @@
         //TODO rever esse "context"
         //_context = [DAO anotherManagedContext];
         //quizDAO = [[QuizDAO alloc] initWithContext:_context];
-        perguntaDAO = [[PerguntaDAO alloc] initWithContext:_context];
+      // perguntaDAO = [[PerguntaDAO alloc] initWithContext:_context];
         
         quizDAO = [[QuizDAO alloc] init];
+        perguntaDAO = [[PerguntaDAO alloc] init];
         Quiz* auxQuiz = [quizDAO createQuizWithTitulo:titulo.text];
         if (quiz){ //se nao existir quiz, crie um!
             auxQuiz.titulo = quiz.titulo;
@@ -56,7 +56,10 @@
     titulo.text = quiz.titulo;
 
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    self.perguntas = nil;
+    [tv reloadData];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -65,7 +68,7 @@
 
 - (IBAction)addQuestion:(id)sender {
     CriaPerguntaViewController *cp = [[CriaPerguntaViewController alloc] initWithNibName:@"CriaPerguntaViewController" bundle:nil];
-    cp.perguntaDAO = perguntaDAO;
+    cp.quiz = quiz;
     [self.navigationController pushViewController:cp animated:YES];
 }
 //TODO logica deve ir para o DAO
@@ -93,7 +96,15 @@
     return [self.perguntas count];
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    UITableViewCell* cell = [[UITableViewCell alloc] init];
+    cell.textLabel.text = [[self.perguntas objectAtIndex:indexPath.row] conteudo];
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CriaPerguntaViewController *cp = [[CriaPerguntaViewController alloc] initWithNibName:@"CriaPerguntaViewController" bundle:nil];
+    cp.pergunta = [self.perguntas objectAtIndex:indexPath.row];
+    cp.quiz = quiz;
+    [self.navigationController pushViewController:cp animated:YES];
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];

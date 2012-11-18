@@ -10,5 +10,7 @@
 #import "Quiz.h"
 #import "DAO.h"
 @interface PerguntaDAO : DAO
-
+-(Pergunta*)createPerguntaWithConteudo:(NSString*)conteudo;
+-(void)saveOnCloud:(Pergunta*)pergunta;
+-(NSArray*)findFromQuiz:(Quiz*)quiz;
 @end
