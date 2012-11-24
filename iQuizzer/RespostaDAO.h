@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "DAO.h"
+#import "Pergunta.h"
 #import "Resposta.h"
 @interface RespostaDAO : DAO
 -(NSArray*)findFromPergunta:(Pergunta*)pergunta;
 -(Resposta*)createRespostaWithConteudo:(NSString*)conteudo correta:(BOOL)correta;
 -(void)saveOnCloud:(Resposta*)resposta;
+-(void)downloadJSONRespostas:(NSArray*)jsonRespostas forPergunta:(Pergunta*)pergunta;
 @end

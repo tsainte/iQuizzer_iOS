@@ -105,6 +105,7 @@
     
     NSString* lbl = [NSString stringWithFormat:@"%@ (%d)", r.conteudo, [r.id intValue]];
     cell.txtConteudo.text = lbl;
+    [cell.correta setOn:[r.correta boolValue]];
     //[self configureButton:cell.btnAction forID:q.index];
     return cell;
 }

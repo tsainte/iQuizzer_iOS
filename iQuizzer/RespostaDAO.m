@@ -73,7 +73,17 @@ Resposta* currentResposta;
 
 
 
-
+-(void)downloadJSONRespostas:(NSArray*)jsonRespostas forPergunta:(Pergunta*)pergunta{
+    for (NSDictionary* jsonResposta in jsonRespostas){
+        Resposta* resposta= [NSEntityDescription insertNewObjectForEntityForName:entity inManagedObjectContext:managedContext];
+        resposta.conteudo = [jsonResposta objectForKey:@"conteudo"];
+        resposta.id = [jsonResposta objectForKey:@"id"];
+        resposta.correta = [jsonResposta objectForKey:@"correta"];
+        resposta.pergunta = pergunta;
+        
+        [self saveContext];
+    }
+}
 
 -(void)update:(Resposta*)resposta{
     

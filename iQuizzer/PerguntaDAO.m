@@ -10,6 +10,7 @@
 #import "Pergunta.h"
 #import "QuizDAO.h"
 #import "Resposta.h"
+#import "RespostaDAO.h"
 @implementation PerguntaDAO
 -(void)setEntity{
     entity = @"Pergunta";
@@ -48,6 +49,9 @@
         pergunta.conteudo = [jsonPergunta objectForKey:@"conteudo"];
         pergunta.id = [jsonPergunta objectForKey:@"id"];
         pergunta.quiz = quiz;
+        
+        RespostaDAO* respostaDAO = [[RespostaDAO alloc] init];
+        [respostaDAO downloadJSONRespostas:[jsonPergunta objectForKey:@"respostas"] forPergunta:pergunta];
         [self saveContext];
     }
 }

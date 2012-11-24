@@ -32,6 +32,7 @@
     respostaDAO = [[RespostaDAO alloc] init];
     if (resposta != nil){
         conteudo.text = resposta.conteudo;
+        [correta setOn:[resposta.correta boolValue]];
     }
 
 }
@@ -55,6 +56,7 @@
 - (IBAction)salvar:(id)sender {
     [self createResposta];
     resposta.conteudo = conteudo.text;
+    resposta.correta = [NSNumber numberWithBool:correta.isOn];
     PerguntaDAO *perguntaDAO = [[PerguntaDAO alloc] init];
     
     NSError* error;

@@ -128,7 +128,7 @@ Quiz* currentQuiz;
     NSString* param = [NSString stringWithFormat:@"%@/%d.json", @"quizzes", [ID intValue]];
     NSData* jsonData = [webService get:param];
     
-    
+    NSLog(@"jsondownloaded: %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
     NSError* error;
     NSDictionary* jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
@@ -140,7 +140,7 @@ Quiz* currentQuiz;
     quiz.index = [jsonQuiz objectForKey:@"id"];
 
     PerguntaDAO* perguntaDAO = [[PerguntaDAO alloc] init];
-    [perguntaDAO downloadJSONPerguntas:[jsonObj objectForKey:@"perguntas"] forQuiz:quiz];
+    [perguntaDAO downloadJSONPerguntas:[jsonQuiz objectForKey:@"perguntas"] forQuiz:quiz];
     
     return [self saveContext];
 
