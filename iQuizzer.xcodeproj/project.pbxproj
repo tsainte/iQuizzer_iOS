@@ -11,6 +11,10 @@
 		F14E9D96164D12780015D72B /* BuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D95164D12780015D72B /* BuyCell.xib */; };
 		F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */; };
 		F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */; };
+		F18112231659241200C69151 /* RespostaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18112221659241100C69151 /* RespostaCell.xib */; };
+		F196DEEB16592E3D0008C0B4 /* RespostaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F196DEEA16592E3D0008C0B4 /* RespostaCell.m */; };
+		F196DEF0165942A20008C0B4 /* MantemRespostaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F196DEEE165942A10008C0B4 /* MantemRespostaViewController.m */; };
+		F196DEF1165942A20008C0B4 /* MantemRespostaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F196DEEF165942A10008C0B4 /* MantemRespostaViewController.xib */; };
 		F1CA3F3D164813D300D240C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CA3F3C164813D300D240C7 /* UIKit.framework */; };
 		F1CA3F3F164813D300D240C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CA3F3E164813D300D240C7 /* Foundation.framework */; };
 		F1CA3F41164813D300D240C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CA3F40164813D300D240C7 /* CoreGraphics.framework */; };
@@ -53,6 +57,12 @@
 		F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeusQuizzesViewController.h; sourceTree = "<group>"; };
 		F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeusQuizzesViewController.m; sourceTree = "<group>"; };
 		F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeusQuizzesViewController.xib; sourceTree = "<group>"; };
+		F18112221659241100C69151 /* RespostaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RespostaCell.xib; sourceTree = "<group>"; };
+		F196DEE916592E3D0008C0B4 /* RespostaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespostaCell.h; sourceTree = "<group>"; };
+		F196DEEA16592E3D0008C0B4 /* RespostaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespostaCell.m; sourceTree = "<group>"; };
+		F196DEED165942A10008C0B4 /* MantemRespostaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantemRespostaViewController.h; sourceTree = "<group>"; };
+		F196DEEE165942A10008C0B4 /* MantemRespostaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MantemRespostaViewController.m; sourceTree = "<group>"; };
+		F196DEEF165942A10008C0B4 /* MantemRespostaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MantemRespostaViewController.xib; sourceTree = "<group>"; };
 		F1CA3F38164813D300D240C7 /* iQuizzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuizzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CA3F3C164813D300D240C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F1CA3F3E164813D300D240C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +138,9 @@
 				F14E9D92164BE8BE0015D72B /* BuyCell.h */,
 				F14E9D93164BE8BE0015D72B /* BuyCell.m */,
 				F14E9D95164D12780015D72B /* BuyCell.xib */,
+				F18112221659241100C69151 /* RespostaCell.xib */,
+				F196DEE916592E3D0008C0B4 /* RespostaCell.h */,
+				F196DEEA16592E3D0008C0B4 /* RespostaCell.m */,
 			);
 			name = "Auxiliar views";
 			sourceTree = "<group>";
@@ -214,6 +227,9 @@
 				F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */,
 				F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */,
 				F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */,
+				F196DEED165942A10008C0B4 /* MantemRespostaViewController.h */,
+				F196DEEE165942A10008C0B4 /* MantemRespostaViewController.m */,
+				F196DEEF165942A10008C0B4 /* MantemRespostaViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -330,6 +346,8 @@
 				F1F5AB59164B4C6A009E7057 /* BaixarQuizzesViewController.xib in Resources */,
 				F14E9D96164D12780015D72B /* BuyCell.xib in Resources */,
 				F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */,
+				F18112231659241200C69151 /* RespostaCell.xib in Resources */,
+				F196DEF1165942A20008C0B4 /* MantemRespostaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +378,8 @@
 				F1F5AB58164B4C6A009E7057 /* BaixarQuizzesViewController.m in Sources */,
 				F14E9D94164BE8BE0015D72B /* BuyCell.m in Sources */,
 				F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */,
+				F196DEEB16592E3D0008C0B4 /* RespostaCell.m in Sources */,
+				F196DEF0165942A20008C0B4 /* MantemRespostaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

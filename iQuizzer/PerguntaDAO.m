@@ -9,6 +9,7 @@
 #import "PerguntaDAO.h"
 #import "Pergunta.h"
 #import "QuizDAO.h"
+#import "Resposta.h"
 @implementation PerguntaDAO
 -(void)setEntity{
     entity = @"Pergunta";
@@ -58,9 +59,21 @@
         [self insert:pergunta];
     }
 }
-
-
+-(void)saveRespostaOnCloud:(Pergunta*)pergunta{
+    
+    [self updateResposta:pergunta];
+}
+-(void)updateResposta:(Pergunta*)pergunta{
+    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]];
+    NSString* method = @"PUT"; //update do quiz
+    NSData* body = [self createBody:pergunta];
+    
+    //por enquanto só adiciona uma pergunta por vez...
+    currentPergunta = pergunta;
+    [webService RESTCommand:parameters HTTPMethod:method jsonBody:body onFinishObj:self onFinishSel:@selector(atualizarRespostasID:)];
+}
 Pergunta* currentPergunta;
+Resposta* currentResposta;
 -(void)insert:(Pergunta*)pergunta{
     NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]];
     NSString* method = @"PUT"; //update do quiz
@@ -78,9 +91,24 @@ Pergunta* currentPergunta;
     //por enquanto só adiciona uma pergunta por vez...
     NSDictionary* pergunta = [perguntas objectAtIndex:0];
     currentPergunta.id = [pergunta objectForKey:@"id"];
+    
+    //[self atualizarRespostasID:[jsonObj objectForKey:@"respostas"]];
     [self saveContext];
 }
-
+-(void)atualizarRespostasID:(NSData*)jsonData{
+    NSError* error;
+    NSDictionary* jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    
+    NSArray* respostas = [jsonObj objectForKey:@"respostas"];
+    //esse for só existe se tiver uma (somente uma) repossta para adicionar
+    for (NSDictionary* resposta in respostas){
+        //por enquanto so adiciona uma resposta por vez, entao ta ok isso...
+        currentResposta.id = [resposta objectForKey:@"id"];
+        NSLog(@"le id: %d", [currentResposta.id intValue]);
+    }
+    //save context on return...
+    [self saveContext];
+}
 -(void)update:(Pergunta*)pergunta{
 
     NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]];
@@ -106,7 +134,20 @@ Pergunta* currentPergunta;
     
     //respostas
     if ([pergunta.resposta count] > 0){
-        [objects addObject:pergunta.resposta];
+        NSMutableArray* respostas = [[NSMutableArray alloc] init];
+        for (Resposta* r in pergunta.resposta){
+            NSDictionary* respostaDict;
+            //update
+            if ([r.id intValue] > 0){
+               respostaDict = [[NSDictionary alloc] initWithObjectsAndKeys:r.conteudo, @"conteudo", r.correta, @"correta", r.id, @"id", nil];
+            } 
+            //insert
+            else {
+                respostaDict = [[NSDictionary alloc] initWithObjectsAndKeys:r.conteudo, @"conteudo", r.correta, @"correta", nil];
+            }
+            [respostas addObject:respostaDict];
+        }
+        [objects addObject:respostas];
         [keys addObject:@"respostas_attributes"];
     }
     
@@ -118,6 +159,8 @@ Pergunta* currentPergunta;
     NSMutableDictionary* jsonDict = [QuizDAO createDictionary:pergunta.quiz];
     [jsonDict setObject:perguntas forKey:@"perguntas_attributes"];
     
+    NSLog(@"jsondict: %@", [jsonDict description]);
+    
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict options:kNilOptions error:nil];
     
     NSString* str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
@@ -125,5 +168,7 @@ Pergunta* currentPergunta;
     
     return jsonData;
 }
-
+-(void)setCurrentResposta:(Resposta*)resposta{
+    currentResposta = resposta;
+}
 @end

@@ -35,14 +35,10 @@
         //quizDAO = [[QuizDAO alloc] initWithContext:_context];
       // perguntaDAO = [[PerguntaDAO alloc] initWithContext:_context];
         
+        
         quizDAO = [[QuizDAO alloc] init];
         perguntaDAO = [[PerguntaDAO alloc] init];
-        Quiz* auxQuiz = [quizDAO createQuizWithTitulo:titulo.text];
-        if (quiz){ //se nao existir quiz, crie um!
-            auxQuiz.titulo = quiz.titulo;
-            auxQuiz.index = quiz.index;
-        }
-        quiz = auxQuiz;
+
  
     }
     return self;
@@ -52,8 +48,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
-    titulo.text = quiz.titulo;
+    if (quiz != nil){
+        titulo.text = quiz.titulo;
+    }
+    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -71,8 +69,22 @@
     cp.quiz = quiz;
     [self.navigationController pushViewController:cp animated:YES];
 }
+-(void)createQuiz{
+    if(quiz == nil){
+        quiz = [quizDAO createQuizWithTitulo:titulo.text];
+    }
+
+    /*
+    Quiz* auxQuiz = [quizDAO createQuizWithTitulo:titulo.text];
+    if (quiz){ //se nao existir quiz, crie um!
+        auxQuiz.titulo = quiz.titulo;
+        auxQuiz.index = quiz.index;
+    }
+    quiz = auxQuiz;*/
+}
 //TODO logica deve ir para o DAO
 - (IBAction)save:(id)sender {
+    [self createQuiz];
     quiz.titulo = titulo.text;
     NSError* error;
     if (![quizDAO.managedContext save:&error]){

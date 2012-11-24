@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface RespostaDAO : NSObject
-
+#import "DAO.h"
+#import "Resposta.h"
+@interface RespostaDAO : DAO
+-(NSArray*)findFromPergunta:(Pergunta*)pergunta;
+-(Resposta*)createRespostaWithConteudo:(NSString*)conteudo correta:(BOOL)correta;
+-(void)saveOnCloud:(Resposta*)resposta;
 @end
