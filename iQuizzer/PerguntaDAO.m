@@ -11,6 +11,7 @@
 #import "QuizDAO.h"
 #import "Resposta.h"
 #import "RespostaDAO.h"
+#import "Functions.h"
 @implementation PerguntaDAO
 -(void)setEntity{
     entity = @"Pergunta";
@@ -174,5 +175,26 @@ Resposta* currentResposta;
 }
 -(void)setCurrentResposta:(Resposta*)resposta{
     currentResposta = resposta;
+}
+-(NSArray*)getRandomPerguntasFromQuiz:(Quiz*)quiz quantity:(NSInteger)qtd {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSString* textPredicate= [NSString stringWithFormat:@"(quiz.index = %d)",  [quiz.index intValue]];
+	
+    [request setEntity:entityDescription];
+	//[request setFetchLimit:qtd];
+    [request setPredicate:[NSPredicate predicateWithFormat:textPredicate]];
+    
+
+	NSError *error = nil;
+    NSArray *fetchResults = [managedContext executeFetchRequest:request error:&error];
+    
+    NSMutableArray* wReturn = [[NSMutableArray alloc] init];
+
+    
+    for (int i = 0; i < qtd; i++){
+        [wReturn addObject:[fetchResults objectAtIndex:arc4random() % fetchResults.count]];
+        //TODO fazer algoritmo para evitar/minimizar repetição
+    }
+	return wReturn;
 }
 @end

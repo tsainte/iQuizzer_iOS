@@ -11,7 +11,13 @@
 		F14E9D96164D12780015D72B /* BuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D95164D12780015D72B /* BuyCell.xib */; };
 		F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */; };
 		F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */; };
+		F17BC59416636872005CC44A /* GameMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17BC59216636872005CC44A /* GameMenuViewController.m */; };
+		F17BC59516636872005CC44A /* GameMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17BC59316636872005CC44A /* GameMenuViewController.xib */; };
+		F17BC59C16636F62005CC44A /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F17BC59B16636F62005CC44A /* GameEngine.m */; };
 		F18112231659241200C69151 /* RespostaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18112221659241100C69151 /* RespostaCell.xib */; };
+		F193C22D1665767A00356C3B /* Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = F193C22C1665767A00356C3B /* Functions.m */; };
+		F193C2341666B83900356C3B /* Resultado_Pergunta.m in Sources */ = {isa = PBXBuildFile; fileRef = F193C2331666B83900356C3B /* Resultado_Pergunta.m */; };
+		F193C23A1666B8A700356C3B /* Jogo.m in Sources */ = {isa = PBXBuildFile; fileRef = F193C2391666B89D00356C3B /* Jogo.m */; };
 		F196DEEB16592E3D0008C0B4 /* RespostaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F196DEEA16592E3D0008C0B4 /* RespostaCell.m */; };
 		F196DEF0165942A20008C0B4 /* MantemRespostaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F196DEEE165942A10008C0B4 /* MantemRespostaViewController.m */; };
 		F196DEF1165942A20008C0B4 /* MantemRespostaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F196DEEF165942A10008C0B4 /* MantemRespostaViewController.xib */; };
@@ -57,7 +63,18 @@
 		F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeusQuizzesViewController.h; sourceTree = "<group>"; };
 		F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeusQuizzesViewController.m; sourceTree = "<group>"; };
 		F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeusQuizzesViewController.xib; sourceTree = "<group>"; };
+		F17BC59116636872005CC44A /* GameMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMenuViewController.h; sourceTree = "<group>"; };
+		F17BC59216636872005CC44A /* GameMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMenuViewController.m; sourceTree = "<group>"; };
+		F17BC59316636872005CC44A /* GameMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMenuViewController.xib; sourceTree = "<group>"; };
+		F17BC59A16636F62005CC44A /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
+		F17BC59B16636F62005CC44A /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
 		F18112221659241100C69151 /* RespostaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RespostaCell.xib; sourceTree = "<group>"; };
+		F193C22B1665767A00356C3B /* Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
+		F193C22C1665767A00356C3B /* Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Functions.m; sourceTree = "<group>"; };
+		F193C2321666B83800356C3B /* Resultado_Pergunta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resultado_Pergunta.h; sourceTree = "<group>"; };
+		F193C2331666B83900356C3B /* Resultado_Pergunta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resultado_Pergunta.m; sourceTree = "<group>"; };
+		F193C2381666B89900356C3B /* Jogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jogo.h; sourceTree = "<group>"; };
+		F193C2391666B89D00356C3B /* Jogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jogo.m; sourceTree = "<group>"; };
 		F196DEE916592E3D0008C0B4 /* RespostaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespostaCell.h; sourceTree = "<group>"; };
 		F196DEEA16592E3D0008C0B4 /* RespostaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespostaCell.m; sourceTree = "<group>"; };
 		F196DEED165942A10008C0B4 /* MantemRespostaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantemRespostaViewController.h; sourceTree = "<group>"; };
@@ -145,6 +162,50 @@
 			name = "Auxiliar views";
 			sourceTree = "<group>";
 		};
+		F17BC597166368B9005CC44A /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				F1CA3FB21649BDCA00D240C7 /* GameViewController.h */,
+				F1CA3FB31649BDCC00D240C7 /* GameViewController.m */,
+				F1CA3FB41649BDD000D240C7 /* GameViewController.xib */,
+				F17BC59116636872005CC44A /* GameMenuViewController.h */,
+				F17BC59216636872005CC44A /* GameMenuViewController.m */,
+				F17BC59316636872005CC44A /* GameMenuViewController.xib */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		F17BC598166368BF005CC44A /* Crud */ = {
+			isa = PBXGroup;
+			children = (
+				F1F5AB41164AE28D009E7057 /* CriarQuizViewController.h */,
+				F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */,
+				F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */,
+				F1F5AB47164B0A79009E7057 /* CriaPerguntaViewController.h */,
+				F1F5AB48164B0A79009E7057 /* CriaPerguntaViewController.m */,
+				F1F5AB49164B0A79009E7057 /* CriaPerguntaViewController.xib */,
+				F1F5AB55164B4C68009E7057 /* BaixarQuizzesViewController.h */,
+				F1F5AB56164B4C69009E7057 /* BaixarQuizzesViewController.m */,
+				F1F5AB57164B4C6A009E7057 /* BaixarQuizzesViewController.xib */,
+				F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */,
+				F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */,
+				F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */,
+				F196DEED165942A10008C0B4 /* MantemRespostaViewController.h */,
+				F196DEEE165942A10008C0B4 /* MantemRespostaViewController.m */,
+				F196DEEF165942A10008C0B4 /* MantemRespostaViewController.xib */,
+			);
+			name = Crud;
+			sourceTree = "<group>";
+		};
+		F17BC59916636F48005CC44A /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				F17BC59A16636F62005CC44A /* GameEngine.h */,
+				F17BC59B16636F62005CC44A /* GameEngine.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		F1CA3F2D164813D300D240C7 = {
 			isa = PBXGroup;
 			children = (
@@ -206,30 +267,14 @@
 		F1CA3F8C16498DCF00D240C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F17BC598166368BF005CC44A /* Crud */,
+				F17BC597166368B9005CC44A /* Game */,
 				F1CA3F6E1648395600D240C7 /* MenuViewController.h */,
 				F1CA3F6F1648395600D240C7 /* MenuViewController.m */,
 				F1CA3F701648395600D240C7 /* MenuViewController.xib */,
 				F1CA3F731648413300D240C7 /* LoginViewController.h */,
 				F1CA3F741648413300D240C7 /* LoginViewController.m */,
 				F1CA3F751648413300D240C7 /* LoginViewController.xib */,
-				F1CA3FB21649BDCA00D240C7 /* GameViewController.h */,
-				F1CA3FB31649BDCC00D240C7 /* GameViewController.m */,
-				F1CA3FB41649BDD000D240C7 /* GameViewController.xib */,
-				F1F5AB41164AE28D009E7057 /* CriarQuizViewController.h */,
-				F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */,
-				F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */,
-				F1F5AB47164B0A79009E7057 /* CriaPerguntaViewController.h */,
-				F1F5AB48164B0A79009E7057 /* CriaPerguntaViewController.m */,
-				F1F5AB49164B0A79009E7057 /* CriaPerguntaViewController.xib */,
-				F1F5AB55164B4C68009E7057 /* BaixarQuizzesViewController.h */,
-				F1F5AB56164B4C69009E7057 /* BaixarQuizzesViewController.m */,
-				F1F5AB57164B4C6A009E7057 /* BaixarQuizzesViewController.xib */,
-				F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */,
-				F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */,
-				F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */,
-				F196DEED165942A10008C0B4 /* MantemRespostaViewController.h */,
-				F196DEEE165942A10008C0B4 /* MantemRespostaViewController.m */,
-				F196DEEF165942A10008C0B4 /* MantemRespostaViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +282,10 @@
 		F1CA3F8D16498DE600D240C7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F193C2381666B89900356C3B /* Jogo.h */,
+				F193C2391666B89D00356C3B /* Jogo.m */,
+				F193C2321666B83800356C3B /* Resultado_Pergunta.h */,
+				F193C2331666B83900356C3B /* Resultado_Pergunta.m */,
 				F1CA3FAF1649974600D240C7 /* Quiz.h */,
 				F1CA3FB01649974600D240C7 /* Quiz.m */,
 				F1CA3FA61649941500D240C7 /* Resposta.h */,
@@ -254,6 +303,8 @@
 			children = (
 				F1CA3F8916498DC500D240C7 /* WebService.h */,
 				F1CA3F8A16498DC600D240C7 /* WebService.m */,
+				F193C22B1665767A00356C3B /* Functions.h */,
+				F193C22C1665767A00356C3B /* Functions.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -261,6 +312,7 @@
 		F1CA3F95164991B900D240C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F17BC59916636F48005CC44A /* Game */,
 				F1CA3F96164991C300D240C7 /* DAO */,
 				F1CA3F8D16498DE600D240C7 /* Entities */,
 			);
@@ -348,6 +400,7 @@
 				F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */,
 				F18112231659241200C69151 /* RespostaCell.xib in Resources */,
 				F196DEF1165942A20008C0B4 /* MantemRespostaViewController.xib in Resources */,
+				F17BC59516636872005CC44A /* GameMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +433,11 @@
 				F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */,
 				F196DEEB16592E3D0008C0B4 /* RespostaCell.m in Sources */,
 				F196DEF0165942A20008C0B4 /* MantemRespostaViewController.m in Sources */,
+				F17BC59416636872005CC44A /* GameMenuViewController.m in Sources */,
+				F17BC59C16636F62005CC44A /* GameEngine.m in Sources */,
+				F193C22D1665767A00356C3B /* Functions.m in Sources */,
+				F193C2341666B83900356C3B /* Resultado_Pergunta.m in Sources */,
+				F193C23A1666B8A700356C3B /* Jogo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

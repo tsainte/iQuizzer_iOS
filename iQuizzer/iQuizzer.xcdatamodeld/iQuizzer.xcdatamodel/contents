@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C54" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Jogo" representedClassName="Jogo" syncable="YES">
+        <attribute name="dia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hora" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pontos" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="resultado_pergunta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Resultado_Pergunta" syncable="YES"/>
+    </entity>
     <entity name="Pergunta" representedClassName="Pergunta" syncable="YES">
         <attribute name="conteudo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -17,6 +24,10 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="pergunta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pergunta" inverseName="resposta" inverseEntity="Pergunta" syncable="YES"/>
     </entity>
+    <entity name="Resultado_Pergunta" representedClassName="Resultado_Pergunta" syncable="YES">
+        <attribute name="acertou" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="pergunta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pergunta" syncable="YES"/>
+    </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
         <attribute name="apelido" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -26,9 +37,11 @@
         <attribute name="sobrenome" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Quiz" positionX="126" positionY="81" width="128" height="88"/>
         <element name="Pergunta" positionX="313" positionY="81" width="128" height="103"/>
-        <element name="Resposta" positionX="315" positionY="275" width="128" height="103"/>
+        <element name="Quiz" positionX="126" positionY="81" width="128" height="88"/>
+        <element name="Resposta" positionX="315" positionY="-63" width="128" height="103"/>
         <element name="Usuario" positionX="-45" positionY="72" width="128" height="133"/>
+        <element name="Jogo" positionX="-45" positionY="275" width="128" height="118"/>
+        <element name="Resultado_Pergunta" positionX="169" positionY="263" width="128" height="73"/>
     </elements>
 </model>

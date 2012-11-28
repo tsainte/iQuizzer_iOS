@@ -10,6 +10,7 @@
 #import "BaixarQuizzesViewController.h"
 #import "CriarQuizViewController.h"
 #import "MeusQuizzesViewController.h"
+#import "GameMenuViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -66,7 +67,7 @@
 
     switch (indexPath.row) {
         case 0:
-            
+            [self openGameMenu];
             break;
         case 1:
             [self showActionSheet];
@@ -81,7 +82,10 @@
             break;
     }
 }
-
+-(void)openGameMenu{
+    GameMenuViewController *gm = [[GameMenuViewController alloc] initWithNibName:@"GameMenuViewController" bundle:nil];
+    [self.navigationController pushViewController:gm animated:YES];
+}
 -(void)showActionSheet{
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Quizzes" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Meus quizzes", @"Baixar", @"Criar", nil];
     [actionSheet showInView:self.view];

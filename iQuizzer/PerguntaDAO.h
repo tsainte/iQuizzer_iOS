@@ -17,4 +17,5 @@
 -(void)downloadJSONPerguntas:(NSArray*)jsonPerguntas forQuiz:(Quiz*)quiz;
 -(void)setCurrentResposta:(Resposta*)resposta;
 -(void)saveRespostaOnCloud:(Pergunta*)pergunta;
+-(NSArray*)getRandomPerguntasFromQuiz:(Quiz*)quiz quantity:(NSInteger)qtd;
 @end
