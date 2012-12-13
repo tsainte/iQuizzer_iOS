@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameEngine.h"
+#import "GameOverViewController.h"
 @interface GameViewController ()
 
 @end
@@ -16,6 +17,9 @@
 @synthesize quiz, engine;
 @synthesize round,lblTime,txtPergunta,tvRespostas,txtPontos;
 @synthesize respostas = _respostas;
+
+Pergunta* currentPergunta;
+
 -(void)setRespostas:(NSArray *)respostas{
     _respostas = respostas;
 }
@@ -63,38 +67,51 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Resposta* r = [self.respostas objectAtIndex:indexPath.row];
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"iQuizzer" message:@"" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
-    if ([r.correta intValue] > 0) {
-        alert.message = @"Correta!";
-    } else {
-        alert.message = @"Errada!";
-    }
-    [alert show];
-    [self roundDown];
+    [self roundDown:r];
 }
 int theRound = 0;
 -(void)roundUp{
-    Pergunta* p = [engine pushPergunta];
-    if (p == nil){
+    currentPergunta = [engine popPergunta];
+    if (currentPergunta == nil){
         [self gameover];
         return;
     }
     round.text = [NSString stringWithFormat:@"Pergunta %d/%d", ++theRound,5];
-    txtPergunta.text = p.conteudo;
-    self.respostas = [p.resposta allObjects];
+    txtPergunta.text = currentPergunta.conteudo;
+    self.respostas = [currentPergunta.resposta allObjects];
     [tvRespostas reloadData];
     
     
 }
--(void)roundDown{
+-(void)roundDown:(Resposta*)r{
     //verifica se acertou
+    BOOL correta;
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"iQuizzer" message:@"" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+    if ([r.correta intValue] > 0) {
+        alert.message = @"Correta!";
+        correta = YES;
+    } else {
+        alert.message = @"Errada!";
+        correta = NO;
+    }
+    [alert show];
+    
+    //adiciona ao historico
+    //[engine pushResultado_pergunta:currentPergunta resultado:correta];
+    [engine pushResultado:r];
     //incrementa pontuacao
     //chama roundUp
     [self roundUp];
 }
 -(void)gameover{
     theRound = 0;
+    [engine saveResults];
+    
+    GameOverViewController* go = [[GameOverViewController alloc] initWithNibName:@"GameOverViewController" bundle:nil];
+    go.jogo = engine.jogo;
+    [self presentViewController:go animated:YES completion:nil];
     engine = nil;
+    
 }
 
 @end

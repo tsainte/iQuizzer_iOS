@@ -10,4 +10,7 @@
 
 @interface Functions : NSObject
 +(NSArray*)shuffle:(NSMutableArray*)array;
++(NSString*)currentDate;
++(NSString*)currentTime;
++(void)alert:(NSString*)message;
 @end

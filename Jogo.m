@@ -2,20 +2,19 @@
 //  Jogo.m
 //  iQuizzer
 //
-//  Created by Tiago Bencardino on 28/11/12.
+//  Created by Tiago Bencardino on 06/12/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
 #import "Jogo.h"
-#import "Resultado_Pergunta.h"
-
+#import "Resultado.h"
 
 @implementation Jogo
 
 @dynamic dia;
 @dynamic hora;
-@dynamic pontos;
 @dynamic id;
-@dynamic resultado_pergunta;
+@dynamic pontos;
+@dynamic resultado;
 
 @end

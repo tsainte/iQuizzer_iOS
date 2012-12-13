@@ -10,6 +10,7 @@
 #import "Quiz.h"
 
 #import "BuyCell.h"
+#import "Functions.h"
 @interface BaixarQuizzesViewController ()
 
 @end
@@ -23,9 +24,13 @@
 }
 -(NSArray*)quizzes{
     if (!_quizzes){
-        
-        _quizzes = [[NSArray alloc] initWithArray:[dao findAllFromServer]];
-        
+        @try {
+            _quizzes = [[NSArray alloc] initWithArray:[dao findAllFromServer]];
+        }
+        @catch (NSException *exception) {
+            [Functions alert:@"Sem conexão com a internet."];
+            //[self.navigationController popToRootViewControllerAnimated:YES];
+        }
     }
     return _quizzes;
 }

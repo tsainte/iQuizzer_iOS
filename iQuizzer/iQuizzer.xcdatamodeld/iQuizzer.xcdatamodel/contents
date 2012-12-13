@@ -5,7 +5,7 @@
         <attribute name="hora" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="pontos" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="resultado_pergunta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Resultado_Pergunta" syncable="YES"/>
+        <relationship name="resultado" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Resultado" syncable="YES"/>
     </entity>
     <entity name="Pergunta" representedClassName="Pergunta" syncable="YES">
         <attribute name="conteudo" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,9 +24,8 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="pergunta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pergunta" inverseName="resposta" inverseEntity="Pergunta" syncable="YES"/>
     </entity>
-    <entity name="Resultado_Pergunta" representedClassName="Resultado_Pergunta" syncable="YES">
-        <attribute name="acertou" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="pergunta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pergunta" syncable="YES"/>
+    <entity name="Resultado" representedClassName="Resultado" syncable="YES">
+        <relationship name="resposta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Resposta" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
         <attribute name="apelido" optional="YES" attributeType="String" syncable="YES"/>
@@ -37,11 +36,11 @@
         <attribute name="sobrenome" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Jogo" positionX="-45" positionY="275" width="128" height="118"/>
         <element name="Pergunta" positionX="313" positionY="81" width="128" height="103"/>
         <element name="Quiz" positionX="126" positionY="81" width="128" height="88"/>
-        <element name="Resposta" positionX="315" positionY="-63" width="128" height="103"/>
+        <element name="Resposta" positionX="358" positionY="239" width="128" height="103"/>
+        <element name="Resultado" positionX="169" positionY="263" width="128" height="58"/>
         <element name="Usuario" positionX="-45" positionY="72" width="128" height="133"/>
-        <element name="Jogo" positionX="-45" positionY="275" width="128" height="118"/>
-        <element name="Resultado_Pergunta" positionX="169" positionY="263" width="128" height="73"/>
     </elements>
 </model>

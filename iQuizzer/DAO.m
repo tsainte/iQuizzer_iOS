@@ -23,7 +23,7 @@
 -(id)init{
     if (self = [super init]){
         self.managedContext = [(AppDelegate*)([[UIApplication sharedApplication] delegate]) managedObjectContext];
-        [self setEntity];
+        [self setEntity]; //should be implemented by child classes
         webService = [[WebService alloc] init];
     }
     return self;

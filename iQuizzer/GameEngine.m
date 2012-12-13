@@ -8,11 +8,15 @@
 
 #import "GameEngine.h"
 #import "PerguntaDAO.h"
+#import "Jogo.h"
+#import "Resultado.h"
+#import "Functions.h"
+
 
 @implementation GameEngine
 @synthesize currentRound;
 @synthesize maxRounds, maxTimePerRound, score;
-@synthesize quiz,perguntas;
+@synthesize quiz,perguntas, resultados, jogo, jogoDAO;
 
 -(id)initWithQuiz:(Quiz*)pQuiz{
     if (self = [super init]){
@@ -30,10 +34,16 @@
     score = 0;
 }
 -(void)start{
-    PerguntaDAO* dao = [[PerguntaDAO alloc] init];
-    perguntas = [[NSMutableArray alloc] initWithArray:[dao getRandomPerguntasFromQuiz:quiz quantity:maxRounds]];
+    jogoDAO = [[JogoDAO alloc] init];
+    jogo = [jogoDAO createJogo];
+    
+    PerguntaDAO* perguntaDAO = [[PerguntaDAO alloc] init];
+    
+    perguntas = [[NSMutableArray alloc] initWithArray:[perguntaDAO getRandomPerguntasFromQuiz:quiz quantity:maxRounds]];
+    resultados = [[NSMutableArray alloc] init];
+    
 }
--(Pergunta*)pushPergunta{
+-(Pergunta*)popPergunta{
     Pergunta* pergunta;
     @try {
         pergunta = [perguntas objectAtIndex:0];
@@ -44,5 +54,31 @@
     }
     return pergunta;
 }
-
+//-(void)pushResultado:(Pergunta*)pergunta resultado:(BOOL)resultado{
+-(void)pushResultado:(Resposta*)resposta{
+    Resultado* rp = [jogoDAO createResultado];
+    //rp.pergunta = pergunta;
+    //rp.acertou = [NSNumber numberWithBool:resultado];
+    //TODO rp.resposta = resposta;
+    rp.resposta = resposta;
+    [jogo addResultadoObject:rp];
+}
+-(void)saveResults{
+    //TODO refatorar para utilizar UTC
+    jogo.dia = [Functions currentDate];
+    jogo.hora = [Functions currentTime];
+    
+    jogo.pontos = [NSNumber numberWithInt:0]; //TODO criar objeto de pontuacao
+    
+    //NSLog(@"game of jsons: %@", [[NSString alloc] initWithData:[jogoDAO createBody:jogo] encoding:NSUTF8StringEncoding]);
+    
+    [jogoDAO saveOnCloud:jogo];
+    /*
+    NSError* error;
+    if (![jogoDAO.managedContext save:&error]){
+        NSLog(@"%@", [error description]);
+    } else { //se tudo ok, envia pra nuvem
+        NSLog(@"envia pra nuvem...");
+    }*/
+}
 @end
