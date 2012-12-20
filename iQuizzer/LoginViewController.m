@@ -7,13 +7,15 @@
 //
 
 #import "LoginViewController.h"
-
+#import "AppDelegate.h"
+#import "Functions.h"
+#import "MenuViewController.h"
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
-
+@synthesize apelido,senha;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -54,5 +56,28 @@
     }
     return cell;
 }
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (IBAction)logar:(id)sender {
+    NSString* login = apelido.text;
+    NSString* password = senha.text;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate authenticate:login password:password callbackView:self callbackMethod:@selector(callbackLogar:)];
+}
+-(void)resultAuth:(NSNumber*)success{
+    if ([success intValue] > 0){
+        MenuViewController* menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:menu];
 
+        [self presentViewController:nav animated:YES completion:nil];
+    } else {
+        [Functions alert:@"Não foi possível logar"];
+    }
+}
+- (IBAction)criarUsuario:(id)sender {
+    [Functions alert:@"Não implementado ainda."];
+    
+}
 @end

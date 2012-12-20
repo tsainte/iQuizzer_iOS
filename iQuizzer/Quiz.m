@@ -2,7 +2,7 @@
 //  Quiz.m
 //  iQuizzer
 //
-//  Created by Tiago Bencardino on 06/11/12.
+//  Created by Tiago Bencardino on 13/12/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 
 @implementation Quiz
 
-@dynamic titulo;
 @dynamic index;
+@dynamic titulo;
+@dynamic descricao;
+@dynamic modojogo;
+@dynamic maxquestoes;
 @dynamic perguntas;
-
-
 
 @end

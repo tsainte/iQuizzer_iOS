@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MenuViewController.h"
+#import "LoginViewController.h"
+#import "UsuarioDAO.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -20,11 +22,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    //verificar se está logado
     MenuViewController* menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:menu];
+    LoginViewController* login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    UINavigationController* nav;
+    if ([self isAuth]){
+          nav = [[UINavigationController alloc] initWithRootViewController:menu];
+    } else {
+          nav = [[UINavigationController alloc] initWithRootViewController:login];
+    }
+
     
     self.window.rootViewController = nav;
     
+
     
     [self.window addSubview:menu.view];
     [self.window makeKeyAndVisible];
@@ -163,11 +174,42 @@
 }
 
 -(BOOL)isAuth{
-    //logica para verificar se usuário está autenticado...
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   
+    isAuth = [defaults boolForKey:@"isAuth"];
     return isAuth;
 }
--(BOOL)authenticate{
-    return true;
+UIViewController* callbackView;
+SEL callbackMethod;
+NSString* username;
+NSString* password;
+
+-(void)authenticate:(NSString*)pUsername password:(NSString*)pPassword callbackView:(UIViewController*)view callbackMethod:(SEL)method{
+    username = pUsername;
+    password = pPassword;
+    callbackMethod = method;
+    callbackView = view;
+    [self verifyLoginOnCloud:username password:password];
 }
 
+//webservice verify if login is ok //TODO
+-(BOOL)verifyLoginOnCloud:(NSString*)username password:(NSString*)password{
+    UsuarioDAO* usuarioDAO = [[UsuarioDAO alloc] init];
+    [usuarioDAO login:username password:password callbackClass:self callbackMethod:@selector(resultAuth:)];
+        NSLog(@"VerifyLoginoncloud");
+    return YES;
+}
+-(void)resultAuth:(NSNumber*)success{
+        NSLog(@"ResultAuth");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([success intValue] > 0){
+        [defaults setObject:username forKey:@"username"];
+        [defaults setObject:password forKey:@"password"];
+        [defaults setObject:success forKey:@"usuario_id"];
+        [defaults setBool:YES forKey:@"isAuth"];
+    } else {
+        [defaults setBool:NO forKey:@"isAuth"];
+    }
+    [callbackView performSelector:callbackMethod withObject:success];
+}
 @end

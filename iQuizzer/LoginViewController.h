@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
+- (IBAction)logar:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *apelido;
+@property (strong, nonatomic) IBOutlet UITextField *senha;
 
+
+- (IBAction)criarUsuario:(id)sender;
 @end

@@ -13,6 +13,8 @@
 		F14E9D96164D12780015D72B /* BuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D95164D12780015D72B /* BuyCell.xib */; };
 		F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */; };
 		F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */; };
+		F16D306816831C55004A4F3E /* UsuarioDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D306716831C55004A4F3E /* UsuarioDAO.m */; };
+		F16D306F16832E19004A4F3E /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D306E16832E19004A4F3E /* Usuario.m */; };
 		F17BC59416636872005CC44A /* GameMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17BC59216636872005CC44A /* GameMenuViewController.m */; };
 		F17BC59516636872005CC44A /* GameMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17BC59316636872005CC44A /* GameMenuViewController.xib */; };
 		F17BC59C16636F62005CC44A /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F17BC59B16636F62005CC44A /* GameEngine.m */; };
@@ -42,12 +44,11 @@
 		F1CA3F79164841C100D240C7 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3F78164841C000D240C7 /* facebook.png */; };
 		F1CA3F8B16498DC700D240C7 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F8A16498DC600D240C7 /* WebService.m */; };
 		F1CA3F99164991D400D240C7 /* QuizDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F98164991D400D240C7 /* QuizDAO.m */; };
-		F1CA3F9C1649937000D240C7 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3F9B1649937000D240C7 /* Usuario.m */; };
 		F1CA3FA81649941600D240C7 /* Resposta.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FA71649941500D240C7 /* Resposta.m */; };
 		F1CA3FAB1649941F00D240C7 /* Pergunta.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FAA1649941F00D240C7 /* Pergunta.m */; };
-		F1CA3FB11649974700D240C7 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FB01649974600D240C7 /* Quiz.m */; };
 		F1CA3FB51649BDD000D240C7 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FB31649BDCC00D240C7 /* GameViewController.m */; };
 		F1CA3FB61649BDD000D240C7 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3FB41649BDD000D240C7 /* GameViewController.xib */; };
+		F1EAA271167A296A0012F315 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EAA270167A296A0012F315 /* Quiz.m */; };
 		F1F5AB44164AE28D009E7057 /* CriarQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */; };
 		F1F5AB45164AE28D009E7057 /* CriarQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */; };
 		F1F5AB4A164B0A79009E7057 /* CriaPerguntaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F5AB48164B0A79009E7057 /* CriaPerguntaViewController.m */; };
@@ -70,6 +71,10 @@
 		F14E9D97164D31AE0015D72B /* MeusQuizzesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeusQuizzesViewController.h; sourceTree = "<group>"; };
 		F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeusQuizzesViewController.m; sourceTree = "<group>"; };
 		F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeusQuizzesViewController.xib; sourceTree = "<group>"; };
+		F16D306616831C55004A4F3E /* UsuarioDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsuarioDAO.h; sourceTree = "<group>"; };
+		F16D306716831C55004A4F3E /* UsuarioDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsuarioDAO.m; sourceTree = "<group>"; };
+		F16D306D16832E19004A4F3E /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		F16D306E16832E19004A4F3E /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		F17BC59116636872005CC44A /* GameMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMenuViewController.h; sourceTree = "<group>"; };
 		F17BC59216636872005CC44A /* GameMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMenuViewController.m; sourceTree = "<group>"; };
 		F17BC59316636872005CC44A /* GameMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMenuViewController.xib; sourceTree = "<group>"; };
@@ -114,17 +119,15 @@
 		F1CA3F8A16498DC600D240C7 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
 		F1CA3F97164991D400D240C7 /* QuizDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizDAO.h; sourceTree = "<group>"; };
 		F1CA3F98164991D400D240C7 /* QuizDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizDAO.m; sourceTree = "<group>"; };
-		F1CA3F9A1649937000D240C7 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Usuario.h; path = ../Usuario.h; sourceTree = "<group>"; };
-		F1CA3F9B1649937000D240C7 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Usuario.m; path = ../Usuario.m; sourceTree = "<group>"; };
 		F1CA3FA61649941500D240C7 /* Resposta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resposta.h; path = ../Resposta.h; sourceTree = "<group>"; };
 		F1CA3FA71649941500D240C7 /* Resposta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resposta.m; path = ../Resposta.m; sourceTree = "<group>"; };
 		F1CA3FA91649941F00D240C7 /* Pergunta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pergunta.h; sourceTree = "<group>"; };
 		F1CA3FAA1649941F00D240C7 /* Pergunta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pergunta.m; sourceTree = "<group>"; };
-		F1CA3FAF1649974600D240C7 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
-		F1CA3FB01649974600D240C7 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
 		F1CA3FB21649BDCA00D240C7 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		F1CA3FB31649BDCC00D240C7 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		F1CA3FB41649BDD000D240C7 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		F1EAA26F167A296A0012F315 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
+		F1EAA270167A296A0012F315 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
 		F1F5AB41164AE28D009E7057 /* CriarQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CriarQuizViewController.h; sourceTree = "<group>"; };
 		F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CriarQuizViewController.m; sourceTree = "<group>"; };
 		F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CriarQuizViewController.xib; sourceTree = "<group>"; };
@@ -305,14 +308,14 @@
 				F12F471D1670C84C00C95311 /* Resultado.m */,
 				F12F47161670C7D000C95311 /* Jogo.h */,
 				F12F47171670C7D000C95311 /* Jogo.m */,
-				F1CA3FAF1649974600D240C7 /* Quiz.h */,
-				F1CA3FB01649974600D240C7 /* Quiz.m */,
 				F1CA3FA61649941500D240C7 /* Resposta.h */,
 				F1CA3FA71649941500D240C7 /* Resposta.m */,
 				F1CA3FA91649941F00D240C7 /* Pergunta.h */,
 				F1CA3FAA1649941F00D240C7 /* Pergunta.m */,
-				F1CA3F9A1649937000D240C7 /* Usuario.h */,
-				F1CA3F9B1649937000D240C7 /* Usuario.m */,
+				F1EAA26F167A296A0012F315 /* Quiz.h */,
+				F1EAA270167A296A0012F315 /* Quiz.m */,
+				F16D306D16832E19004A4F3E /* Usuario.h */,
+				F16D306E16832E19004A4F3E /* Usuario.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -351,6 +354,8 @@
 				F1F5AB53164B20F8009E7057 /* DAO.m */,
 				F193C23C1666B9A600356C3B /* JogoDAO.h */,
 				F193C23D1666B9A600356C3B /* JogoDAO.m */,
+				F16D306616831C55004A4F3E /* UsuarioDAO.h */,
+				F16D306716831C55004A4F3E /* UsuarioDAO.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -440,10 +445,8 @@
 				F1CA3F761648413300D240C7 /* LoginViewController.m in Sources */,
 				F1CA3F8B16498DC700D240C7 /* WebService.m in Sources */,
 				F1CA3F99164991D400D240C7 /* QuizDAO.m in Sources */,
-				F1CA3F9C1649937000D240C7 /* Usuario.m in Sources */,
 				F1CA3FA81649941600D240C7 /* Resposta.m in Sources */,
 				F1CA3FAB1649941F00D240C7 /* Pergunta.m in Sources */,
-				F1CA3FB11649974700D240C7 /* Quiz.m in Sources */,
 				F1CA3FB51649BDD000D240C7 /* GameViewController.m in Sources */,
 				F1F5AB44164AE28D009E7057 /* CriarQuizViewController.m in Sources */,
 				F1F5AB4A164B0A79009E7057 /* CriaPerguntaViewController.m in Sources */,
@@ -462,6 +465,9 @@
 				F1A16B20166D708900293263 /* GameOverViewController.m in Sources */,
 				F12F47181670C7D000C95311 /* Jogo.m in Sources */,
 				F12F471E1670C84C00C95311 /* Resultado.m in Sources */,
+				F1EAA271167A296A0012F315 /* Quiz.m in Sources */,
+				F16D306816831C55004A4F3E /* UsuarioDAO.m in Sources */,
+				F16D306F16832E19004A4F3E /* Usuario.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

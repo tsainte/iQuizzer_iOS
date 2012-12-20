@@ -31,6 +31,7 @@ bool hasCallback = NO;
     finishObj = obj;
     finishSel = sel;
     hasCallback = YES;
+    NSLog(@"Sending: %@", [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding]);
     [self RESTCommand:parameters HTTPMethod:method jsonBody:body];
     
 }
@@ -46,6 +47,8 @@ bool hasCallback = NO;
     [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [theRequest setHTTPMethod:method];
     
+    NSLog(@"the json: %@", [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding]);
+    NSLog(@"the request: %@",[theRequest description]);
     //make connection
     NSURLConnection *theConnection = [[NSURLConnection alloc]initWithRequest:theRequest delegate:self];
     if(theConnection){

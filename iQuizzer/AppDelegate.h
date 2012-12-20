@@ -20,5 +20,6 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSManagedObjectContext *)anotherManagedObjectContext;
+-(void)authenticate:(NSString*)pUsername password:(NSString*)pPassword callbackView:(UIViewController*)view callbackMethod:(SEL)method;
 
 @end
