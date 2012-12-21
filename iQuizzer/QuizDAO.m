@@ -118,8 +118,12 @@ Quiz* currentQuiz;
     return jsonData;
 }
 +(NSMutableDictionary*)createDictionary:(Quiz*)quiz{
-    NSArray* objects = [[NSArray alloc] initWithObjects:quiz.index.description, quiz.titulo, nil];
-    NSArray* keys = [[NSArray alloc] initWithObjects:@"id",@"titulo", nil]; //chaves do app server
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSNumber* usuario_id = [defaults objectForKey:@"usuario_id"];
+
+    NSArray* objects = [[NSArray alloc] initWithObjects:quiz.index.description, quiz.titulo, quiz.maxquestoes, quiz.modojogo, usuario_id, quiz.descricao, nil];
+    NSArray* keys = [[NSArray alloc] initWithObjects:@"id",@"titulo", @"maxquestoes", @"modojogo", @"usuario_id", @"descricao",nil]; //chaves do app server
     
     NSMutableDictionary* jsonDict = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
     return jsonDict;
@@ -137,6 +141,9 @@ Quiz* currentQuiz;
     Quiz* quiz = [[Quiz alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedContext];
 
     quiz.titulo = [jsonQuiz objectForKey:@"titulo"];
+    quiz.descricao = [jsonQuiz objectForKey:@"descricao"];
+    quiz.maxquestoes = [jsonQuiz objectForKey:@"maxquestoes"];
+    quiz.modojogo = [jsonQuiz objectForKey:@"modojogo"];
     quiz.index = [jsonQuiz objectForKey:@"id"];
 
     PerguntaDAO* perguntaDAO = [[PerguntaDAO alloc] init];

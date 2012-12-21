@@ -14,6 +14,9 @@
 @interface CriarQuizViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *titulo;
+@property (strong, nonatomic) IBOutlet UITextField *descricao;
+@property (strong, nonatomic) IBOutlet UITextField *maxquestoes;
+@property (strong, nonatomic) IBOutlet UITextField *modojogo;
 
 @property (strong) Quiz* quiz;
 @property (strong) NSArray* perguntas;

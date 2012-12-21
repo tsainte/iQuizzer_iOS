@@ -19,7 +19,7 @@
 @synthesize respostas = _respostas;
 
 Pergunta* currentPergunta;
-
+NSInteger MAX_ROUND = 5;
 -(void)setRespostas:(NSArray *)respostas{
     _respostas = respostas;
 }
@@ -76,7 +76,7 @@ int theRound = 0;
         [self gameover];
         return;
     }
-    round.text = [NSString stringWithFormat:@"Pergunta %d/%d", ++theRound,5];
+    round.text = [NSString stringWithFormat:@"Pergunta %d/%d", ++theRound,MAX_ROUND];
     txtPergunta.text = currentPergunta.conteudo;
     self.respostas = [currentPergunta.resposta allObjects];
     [tvRespostas reloadData];
@@ -104,9 +104,12 @@ int theRound = 0;
     [self roundUp];
 }
 -(void)gameover{
-    theRound = 0;
-    [engine saveResults];
+  
+    if (theRound == MAX_ROUND){
+        [engine saveResults];
+    }
     
+    theRound = 0;
     GameOverViewController* go = [[GameOverViewController alloc] initWithNibName:@"GameOverViewController" bundle:nil];
     go.jogo = engine.jogo;
     [self presentViewController:go animated:YES completion:nil];

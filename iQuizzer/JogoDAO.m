@@ -31,10 +31,13 @@
     return jsonData;
 }
 +(NSMutableDictionary*)createJogoDictionary:(Jogo*)jogo{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSNumber* usuario_id = [defaults objectForKey:@"usuario_id"];
     NSArray* resultados = [self createResultadoDictionary:[jogo.resultado allObjects]];
     
-    NSArray* objects = [[NSArray alloc] initWithObjects:jogo.dia, jogo.hora, jogo.pontos, resultados, nil];
-    NSArray* keys = [[NSArray alloc] initWithObjects:@"dia",@"hora",@"pontos",@"resultados_attributes", nil]; //chaves do app server
+    NSArray* objects = [[NSArray alloc] initWithObjects:jogo.dia, jogo.hora, jogo.pontos, resultados, usuario_id, nil];
+    NSArray* keys = [[NSArray alloc] initWithObjects:@"dia",@"hora",@"pontos",@"resultados_attributes", @"usuario_id", nil]; //chaves do app server
     
     NSMutableDictionary* jsonDict = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
     return jsonDict;

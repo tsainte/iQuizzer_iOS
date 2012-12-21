@@ -9,6 +9,7 @@
 #import "GameOverViewController.h"
 #import "Resultado.h"
 #import "Resposta.h"
+#import "MenuViewController.h"
 @interface GameOverViewController ()
 
 @end
@@ -41,6 +42,10 @@
 }
 
 - (IBAction)menu:(id)sender {
+    MenuViewController* menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:menu];
+    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 -(NSInteger)countAcertos{
     int acertos = 0;

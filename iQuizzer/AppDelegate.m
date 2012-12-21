@@ -196,16 +196,17 @@ NSString* password;
 -(BOOL)verifyLoginOnCloud:(NSString*)username password:(NSString*)password{
     UsuarioDAO* usuarioDAO = [[UsuarioDAO alloc] init];
     [usuarioDAO login:username password:password callbackClass:self callbackMethod:@selector(resultAuth:)];
-        NSLog(@"VerifyLoginoncloud");
+
     return YES;
 }
 -(void)resultAuth:(NSNumber*)success{
-        NSLog(@"ResultAuth");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([success intValue] > 0){
         [defaults setObject:username forKey:@"username"];
         [defaults setObject:password forKey:@"password"];
         [defaults setObject:success forKey:@"usuario_id"];
+
         [defaults setBool:YES forKey:@"isAuth"];
     } else {
         [defaults setBool:NO forKey:@"isAuth"];

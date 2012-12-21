@@ -14,7 +14,8 @@
 @end
 
 @implementation CriarQuizViewController
-@synthesize titulo, tv;
+@synthesize titulo, tv, descricao, maxquestoes,modojogo
+;
 @synthesize perguntas = _perguntas;
 @synthesize quiz, quizDAO, perguntaDAO;
 -(void)setPerguntas:(NSArray *)perguntas{
@@ -50,6 +51,10 @@
     // Do any additional setup after loading the view from its nib.
     if (quiz != nil){
         titulo.text = quiz.titulo;
+        descricao.text = quiz.descricao;
+        maxquestoes.text = [quiz.maxquestoes description];
+        modojogo.text = [quiz.modojogo description];
+        
     }
     
 
@@ -86,6 +91,9 @@
 - (IBAction)save:(id)sender {
     [self createQuiz];
     quiz.titulo = titulo.text;
+    quiz.descricao = descricao.text;
+    quiz.maxquestoes = [NSNumber numberWithInt:[maxquestoes.text intValue]];
+    quiz.modojogo = [NSNumber numberWithInt:[modojogo.text intValue]];
     NSError* error;
     if (![quizDAO.managedContext save:&error]){
         NSLog(@"%@", [error description]);
