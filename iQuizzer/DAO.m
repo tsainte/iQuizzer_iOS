@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 @implementation DAO
-@synthesize managedContext, entity, webService;
+@synthesize managedContext, entity, webService, token;
 
 -(id)initWithContext:(NSManagedObjectContext*)context{
     if (self = [super init]){
@@ -49,5 +49,17 @@
 +(NSManagedObjectContext*)anotherManagedContext{
     AppDelegate* app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     return [app anotherManagedObjectContext];
+}
+-(NSString*)token{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    token = [defaults objectForKey:@"token"];
+    return token;
+}
+-(void)setToken:(NSString *)ptoken{
+    token = ptoken;
+}
+-(NSString*)getResource:(NSString*)parameter{
+    NSString* resource = [NSString stringWithFormat:@"%@?auth_token=%@", parameter, self.token];
+    return resource;
 }
 @end

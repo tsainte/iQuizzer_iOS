@@ -38,6 +38,7 @@
         <attribute name="pontos_jogador" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sobrenome" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Jogo" positionX="-45" positionY="275" width="128" height="118"/>
@@ -45,6 +46,6 @@
         <element name="Quiz" positionX="126" positionY="81" width="128" height="133"/>
         <element name="Resposta" positionX="358" positionY="239" width="128" height="103"/>
         <element name="Resultado" positionX="169" positionY="263" width="128" height="58"/>
-        <element name="Usuario" positionX="-45" positionY="72" width="128" height="150"/>
+        <element name="Usuario" positionX="-45" positionY="72" width="128" height="165"/>
     </elements>
 </model>

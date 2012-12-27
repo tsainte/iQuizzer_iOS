@@ -13,4 +13,5 @@
     
 }
 -(void)login:(NSString*)username password:(NSString*)password callbackClass:(NSObject*)classCallback callbackMethod:(SEL)methodCallback;
+-(void)insert:(NSNumber*)id username:(NSString*)username password:(NSString*)password token:(NSString*)token;
 @end

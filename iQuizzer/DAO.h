@@ -17,6 +17,7 @@
 @property (strong) WebService* webService;
 @property (strong) NSString* entity;
 @property (strong) NSManagedObjectContext* managedContext;
+@property (strong) NSString* token;
 
 -(id)initWithContext:(NSManagedObjectContext*)context;
 -(id)init;
@@ -24,4 +25,5 @@
 -(void)setEntity;
 +(NSManagedObjectContext*)anotherManagedContext;
 -(NSArray*)findAllFromLocal;
+-(NSString*)getResource:(NSString*)parameter;
 @end

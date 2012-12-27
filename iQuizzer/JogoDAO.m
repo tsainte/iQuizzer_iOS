@@ -37,7 +37,7 @@
     NSArray* resultados = [self createResultadoDictionary:[jogo.resultado allObjects]];
     
     NSArray* objects = [[NSArray alloc] initWithObjects:jogo.dia, jogo.hora, jogo.pontos, resultados, usuario_id, nil];
-    NSArray* keys = [[NSArray alloc] initWithObjects:@"dia",@"hora",@"pontos",@"resultados_attributes", @"usuario_id", nil]; //chaves do app server
+    NSArray* keys = [[NSArray alloc] initWithObjects:@"dia",@"hora",@"pontos",@"resultados_attributes", @"user_id", nil]; //chaves do app server
     
     NSMutableDictionary* jsonDict = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
     return jsonDict;
@@ -70,7 +70,7 @@
     [self create:jogo];
 }
 -(void)create:(Jogo*)jogo{
-    NSString* parameters = @"jogos";
+    NSString* parameters = [self getResource:@"jogos"];
     NSString* method = @"POST";
     NSData* body = [self createBody:jogo];
     

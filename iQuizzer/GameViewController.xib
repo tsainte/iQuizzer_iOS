@@ -41,7 +41,7 @@
 					<object class="IBUILabel" id="606065779">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{223, 12}, {68, 21}}</string>
+						<string key="NSFrame">{{291, 33}, {0, 0}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="696399832"/>
@@ -51,7 +51,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">&lt;tempo&gt;</string>
+						<string key="IBUIText"/>
 						<object class="NSColor" key="IBUITextColor" id="802681960">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -122,8 +122,8 @@
 						<reference key="NSNextKeyView" ref="771926944"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAxIDEAA</bytes>
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MC42NjI3NDUxMTgxIDAuODI3NDUxMDUwMyAwLjkyOTQxMTgyODUAA</bytes>
 						</object>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -171,8 +171,8 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1045156147"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC42MzQ2ODUxMTA1IDAuNzU3MzE0NzkwNCAwLjkwMTk2MDc5MDIAA</bytes>
+					<int key="NSColorSpace">2</int>
+					<bytes key="NSRGB">MC42NjI3NDUxMTgxIDAuODI3NDUxMDUwMyAwLjkyOTQxMTgyODUAA</bytes>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">

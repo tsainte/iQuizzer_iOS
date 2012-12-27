@@ -69,7 +69,7 @@
     [self updateResposta:pergunta];
 }
 -(void)updateResposta:(Pergunta*)pergunta{
-    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]];
+    NSString* parameters = [self getResource:[NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]]];
     NSString* method = @"PUT"; //update do quiz
     NSData* body = [self createBody:pergunta];
     
@@ -80,7 +80,7 @@
 Pergunta* currentPergunta;
 Resposta* currentResposta;
 -(void)insert:(Pergunta*)pergunta{
-    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]];
+    NSString* parameters = [self getResource:[NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]]];
     NSString* method = @"PUT"; //update do quiz
     NSData* body = [self createBody:pergunta];
     
@@ -116,7 +116,7 @@ Resposta* currentResposta;
 }
 -(void)update:(Pergunta*)pergunta{
 
-    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]];
+    NSString* parameters = [self getResource:[NSString stringWithFormat:@"quizzes/%d",[pergunta.quiz.index intValue]]];
     NSString* method = @"PUT"; 
     NSData* body = [self createBody:pergunta];
     [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];
@@ -194,6 +194,32 @@ Resposta* currentResposta;
     for (int i = 0; i < qtd; i++){
         [wReturn addObject:[fetchResults objectAtIndex:arc4random() % fetchResults.count]];
         //TODO fazer algoritmo para evitar/minimizar repetição
+    }
+	return wReturn;
+}
+-(NSArray*)getPerguntasFromQuiz:(Quiz*)quiz quantity:(NSInteger)qtd {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSString* textPredicate= [NSString stringWithFormat:@"(quiz.index = %d)",  [quiz.index intValue]];
+	
+    [request setEntity:entityDescription];
+	//[request setFetchLimit:qtd];
+    [request setPredicate:[NSPredicate predicateWithFormat:textPredicate]];
+    
+    
+	NSError *error = nil;
+    NSArray *fetchResults = [managedContext executeFetchRequest:request error:&error];
+    
+    NSMutableArray* wReturn = [[NSMutableArray alloc] init];
+    
+    int j = 0;
+    for (int i = 0; i < qtd; i++){
+        [wReturn addObject:[fetchResults objectAtIndex:j]];
+        
+        //gamb pra repetir as pergunas caso elas acabem...
+        j++;
+        if (j == [fetchResults count]){
+            j = 0;
+        }
     }
 	return wReturn;
 }

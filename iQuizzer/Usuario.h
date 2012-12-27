@@ -2,7 +2,7 @@
 //  Usuario.h
 //  iQuizzer
 //
-//  Created by Tiago Bencardino on 20/12/12.
+//  Created by Tiago Bencardino on 26/12/12.
 //  Copyright (c) 2012 Tiago Bencardino. All rights reserved.
 //
 
@@ -17,7 +17,8 @@
 @property (nonatomic, retain) NSString * nome;
 @property (nonatomic, retain) NSNumber * pontos_criador;
 @property (nonatomic, retain) NSNumber * pontos_jogador;
-@property (nonatomic, retain) NSNumber * sobrenome;
 @property (nonatomic, retain) NSString * senha;
+@property (nonatomic, retain) NSNumber * sobrenome;
+@property (nonatomic, retain) NSString * token;
 
 @end

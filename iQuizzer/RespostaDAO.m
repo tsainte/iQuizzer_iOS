@@ -52,7 +52,7 @@ Resposta* currentResposta;
 
 //acho que nao tem esse lance de insert/update para respostas..
 -(void)insert:(Resposta*)resposta{
-    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[resposta.pergunta.quiz.index intValue]];
+    NSString* parameters = [self getResource:[NSString stringWithFormat:@"quizzes/%d",[resposta.pergunta.quiz.index intValue]]];
     NSString* method = @"PUT"; //update do quiz
     NSData* body = [self createBody:resposta];
     
@@ -87,7 +87,7 @@ Resposta* currentResposta;
 
 -(void)update:(Resposta*)resposta{
     
-    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[resposta.pergunta.quiz.index intValue]];
+    NSString* parameters = [self getResource:[NSString stringWithFormat:@"quizzes/%d",[resposta.pergunta.quiz.index intValue]]];
     NSString* method = @"PUT";
     NSData* body = [self createBody:resposta];
     [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];

@@ -15,8 +15,8 @@
 @implementation QuizDAO
 
 -(NSArray*)findAllFromServer{
-
-    NSData* jsonData = [webService get:@"quizzes.json"];
+    
+    NSData* jsonData = [webService get:[self getResource:@"quizzes.json"]];
     NSError* error;
     NSArray* jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
@@ -76,7 +76,7 @@
 Quiz* currentQuiz;
 
 -(void)create:(Quiz*)quiz{
-    NSString* parameters = @"quizzes";
+    NSString* parameters = [self getResource:@"quizzes"];
     NSString* method = @"POST";
     NSData* body = [self createBody:quiz];
     
@@ -93,14 +93,14 @@ Quiz* currentQuiz;
     [self saveContext];
 }
 -(void)update:(Quiz*)quiz{
-    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]];
+    NSString* parameters = [self getResource:[NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]]];
     NSString* method = @"PUT";
     NSData* body = [self createBody:quiz];
     [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];
 }
 -(void)remove:(Quiz*)quiz{
    //apagando do servidor
-    NSString* parameters = [NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]];
+    NSString* parameters = [self getResource:[NSString stringWithFormat:@"quizzes/%d",[quiz.index intValue]]];
     NSString* method = @"DELETE";
     NSData* body = [self createBody:quiz];
     [webService RESTCommand:parameters HTTPMethod:method jsonBody:body];
@@ -129,7 +129,7 @@ Quiz* currentQuiz;
     return jsonDict;
 }
 -(BOOL)downloadQuiz:(NSNumber*)ID{
-    NSString* param = [NSString stringWithFormat:@"%@/%d.json", @"quizzes", [ID intValue]];
+    NSString* param = [self getResource:[NSString stringWithFormat:@"%@/%d.json", @"quizzes", [ID intValue]]];
     NSData* jsonData = [webService get:param];
     
     NSLog(@"jsondownloaded: %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);

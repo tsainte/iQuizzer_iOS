@@ -70,6 +70,8 @@
     Quiz* q = [self.quizzes objectAtIndex:indexPath.row];
     GameViewController* gq = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
     gq.quiz = q;
+    NSLog(@"quiz.content: %@",q.titulo);
+    NSLog(@"count perguntas: %d", q.perguntas.count);
     [self.navigationController pushViewController:gq animated:YES];
 }
 

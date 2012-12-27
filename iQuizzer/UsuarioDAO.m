@@ -17,7 +17,7 @@
 Usuario* currentUsuario;
 NSObject* callbackClass;
 SEL callbackMethod;
-
+//TODO REMOVER
 -(void)login:(NSString*)username password:(NSString*)password callbackClass:(NSObject*)classCallback callbackMethod:(SEL)methodCallback{
     
     currentUsuario = [NSEntityDescription insertNewObjectForEntityForName:entity inManagedObjectContext:managedContext];
@@ -27,12 +27,13 @@ SEL callbackMethod;
     callbackClass = classCallback;
     callbackMethod = methodCallback;
     
-    NSString* parameters = @"usuarios/validate";
+    NSString* parameters = [self getResource:@"usuarios/validate"];
     NSString* method = @"PUT";
     NSData* body = [self createBody:currentUsuario];
     
     [webService RESTCommand:parameters HTTPMethod:method jsonBody:body onFinishObj:self onFinishSel:@selector(isValidLogin:)];
 }
+//TODO REMOVER
 -(void)isValidLogin:(NSData*)jsonData{
     //{"success":true,"id":1}
 
@@ -58,5 +59,14 @@ SEL callbackMethod;
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict options:kNilOptions error:nil];
     
     return jsonData;
+}
+-(void)insert:(NSNumber*)id username:(NSString*)username password:(NSString*)password token:(NSString*)token{
+    currentUsuario = [NSEntityDescription insertNewObjectForEntityForName:entity inManagedObjectContext:managedContext];
+    currentUsuario.apelido = username;
+    currentUsuario.senha = password;
+    currentUsuario.id = id;
+    currentUsuario.token = token;
+    
+    [self saveContext];
 }
 @end

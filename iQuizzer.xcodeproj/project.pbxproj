@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12EE2C4168BBB91009D43F0 /* Authenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = F12EE2C3168BBB91009D43F0 /* Authenticator.m */; };
+		F12EE2C8168BC369009D43F0 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F12EE2C7168BC369009D43F0 /* Usuario.m */; };
 		F12F47181670C7D000C95311 /* Jogo.m in Sources */ = {isa = PBXBuildFile; fileRef = F12F47171670C7D000C95311 /* Jogo.m */; };
 		F12F471E1670C84C00C95311 /* Resultado.m in Sources */ = {isa = PBXBuildFile; fileRef = F12F471D1670C84C00C95311 /* Resultado.m */; };
 		F14E9D94164BE8BE0015D72B /* BuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9D93164BE8BE0015D72B /* BuyCell.m */; };
@@ -14,7 +16,6 @@
 		F14E9D9A164D31B20015D72B /* MeusQuizzesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9D98164D31AF0015D72B /* MeusQuizzesViewController.m */; };
 		F14E9D9B164D31B20015D72B /* MeusQuizzesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */; };
 		F16D306816831C55004A4F3E /* UsuarioDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D306716831C55004A4F3E /* UsuarioDAO.m */; };
-		F16D306F16832E19004A4F3E /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D306E16832E19004A4F3E /* Usuario.m */; };
 		F17BC59416636872005CC44A /* GameMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17BC59216636872005CC44A /* GameMenuViewController.m */; };
 		F17BC59516636872005CC44A /* GameMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17BC59316636872005CC44A /* GameMenuViewController.xib */; };
 		F17BC59C16636F62005CC44A /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F17BC59B16636F62005CC44A /* GameEngine.m */; };
@@ -48,6 +49,7 @@
 		F1CA3FAB1649941F00D240C7 /* Pergunta.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FAA1649941F00D240C7 /* Pergunta.m */; };
 		F1CA3FB51649BDD000D240C7 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3FB31649BDCC00D240C7 /* GameViewController.m */; };
 		F1CA3FB61649BDD000D240C7 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CA3FB41649BDD000D240C7 /* GameViewController.xib */; };
+		F1CB5B721688FE4D00FDD331 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CB5B711688FE4D00FDD331 /* Score.m */; };
 		F1EAA271167A296A0012F315 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EAA270167A296A0012F315 /* Quiz.m */; };
 		F1F5AB44164AE28D009E7057 /* CriarQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F5AB42164AE28D009E7057 /* CriarQuizViewController.m */; };
 		F1F5AB45164AE28D009E7057 /* CriarQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F5AB43164AE28D009E7057 /* CriarQuizViewController.xib */; };
@@ -61,6 +63,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F12EE2C2168BBB91009D43F0 /* Authenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authenticator.h; sourceTree = "<group>"; };
+		F12EE2C3168BBB91009D43F0 /* Authenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authenticator.m; sourceTree = "<group>"; };
+		F12EE2C6168BC369009D43F0 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		F12EE2C7168BC369009D43F0 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		F12F47161670C7D000C95311 /* Jogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jogo.h; path = ../Jogo.h; sourceTree = "<group>"; };
 		F12F47171670C7D000C95311 /* Jogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jogo.m; path = ../Jogo.m; sourceTree = "<group>"; };
 		F12F471C1670C84C00C95311 /* Resultado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resultado.h; path = ../Resultado.h; sourceTree = "<group>"; };
@@ -73,8 +79,6 @@
 		F14E9D99164D31B00015D72B /* MeusQuizzesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeusQuizzesViewController.xib; sourceTree = "<group>"; };
 		F16D306616831C55004A4F3E /* UsuarioDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsuarioDAO.h; sourceTree = "<group>"; };
 		F16D306716831C55004A4F3E /* UsuarioDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsuarioDAO.m; sourceTree = "<group>"; };
-		F16D306D16832E19004A4F3E /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
-		F16D306E16832E19004A4F3E /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		F17BC59116636872005CC44A /* GameMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMenuViewController.h; sourceTree = "<group>"; };
 		F17BC59216636872005CC44A /* GameMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMenuViewController.m; sourceTree = "<group>"; };
 		F17BC59316636872005CC44A /* GameMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMenuViewController.xib; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		F1CA3FB21649BDCA00D240C7 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		F1CA3FB31649BDCC00D240C7 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		F1CA3FB41649BDD000D240C7 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		F1CB5B701688FE4D00FDD331 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		F1CB5B711688FE4D00FDD331 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		F1EAA26F167A296A0012F315 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
 		F1EAA270167A296A0012F315 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
 		F1F5AB41164AE28D009E7057 /* CriarQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CriarQuizViewController.h; sourceTree = "<group>"; };
@@ -216,6 +222,8 @@
 			children = (
 				F17BC59A16636F62005CC44A /* GameEngine.h */,
 				F17BC59B16636F62005CC44A /* GameEngine.m */,
+				F1CB5B701688FE4D00FDD331 /* Score.h */,
+				F1CB5B711688FE4D00FDD331 /* Score.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -314,8 +322,8 @@
 				F1CA3FAA1649941F00D240C7 /* Pergunta.m */,
 				F1EAA26F167A296A0012F315 /* Quiz.h */,
 				F1EAA270167A296A0012F315 /* Quiz.m */,
-				F16D306D16832E19004A4F3E /* Usuario.h */,
-				F16D306E16832E19004A4F3E /* Usuario.m */,
+				F12EE2C6168BC369009D43F0 /* Usuario.h */,
+				F12EE2C7168BC369009D43F0 /* Usuario.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -327,6 +335,8 @@
 				F1CA3F8A16498DC600D240C7 /* WebService.m */,
 				F193C22B1665767A00356C3B /* Functions.h */,
 				F193C22C1665767A00356C3B /* Functions.m */,
+				F12EE2C2168BBB91009D43F0 /* Authenticator.h */,
+				F12EE2C3168BBB91009D43F0 /* Authenticator.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -467,7 +477,9 @@
 				F12F471E1670C84C00C95311 /* Resultado.m in Sources */,
 				F1EAA271167A296A0012F315 /* Quiz.m in Sources */,
 				F16D306816831C55004A4F3E /* UsuarioDAO.m in Sources */,
-				F16D306F16832E19004A4F3E /* Usuario.m in Sources */,
+				F1CB5B721688FE4D00FDD331 /* Score.m in Sources */,
+				F12EE2C4168BBB91009D43F0 /* Authenticator.m in Sources */,
+				F12EE2C8168BC369009D43F0 /* Usuario.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

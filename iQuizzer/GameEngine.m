@@ -19,9 +19,10 @@
 @synthesize quiz,perguntas, resultados, jogo, jogoDAO;
 
 -(id)initWithQuiz:(Quiz*)pQuiz{
+
     if (self = [super init]){
-        [self initParameters];
         self.quiz = pQuiz;
+        [self initParameters];
         [self start];
     }
     return self;
@@ -29,7 +30,10 @@
 //isso deve vir de um plist ou de uma tela de settings
 -(void)initParameters{
     currentRound = 0;
-    maxRounds = 5;
+    maxRounds = [self.quiz.maxquestoes integerValue];
+    NSLog(@"maxrounds: %d", maxRounds);
+    NSLog(@"str maxrounds: %@", [self.quiz.maxquestoes description]);
+    NSLog(@"str titulo: %@", [self.quiz.titulo description]);
     maxTimePerRound = 10; //nao usado ainda
     score = 0;
 }
@@ -37,11 +41,27 @@
     jogoDAO = [[JogoDAO alloc] init];
     jogo = [jogoDAO createJogo];
     
-    PerguntaDAO* perguntaDAO = [[PerguntaDAO alloc] init];
-    
-    perguntas = [[NSMutableArray alloc] initWithArray:[perguntaDAO getRandomPerguntasFromQuiz:quiz quantity:maxRounds]];
+    perguntas = [self getPerguntasForMode:[self.quiz.modojogo intValue]];
+
     resultados = [[NSMutableArray alloc] init];
     
+}
+-(NSMutableArray*)getPerguntasForMode:(int)modojogo{
+    PerguntaDAO* perguntaDAO = [[PerguntaDAO alloc] init];
+    NSMutableArray* lePerguntas;
+    switch (modojogo) {
+        case 1: //random e sem tempo
+            lePerguntas = [[NSMutableArray alloc] initWithArray:[perguntaDAO getRandomPerguntasFromQuiz:quiz quantity:maxRounds]];
+            break;
+        case 2: //na ordem
+                        lePerguntas = [[NSMutableArray alloc] initWithArray:[perguntaDAO getRandomPerguntasFromQuiz:quiz quantity:maxRounds]];
+            //lePerguntas = [[NSMutableArray alloc] initWithArray:[perguntaDAO getPerguntasFromQuiz:quiz quantity:maxRounds]];
+            break;
+        default:
+            lePerguntas = [[NSMutableArray alloc] initWithArray:[perguntaDAO getRandomPerguntasFromQuiz:quiz quantity:maxRounds]];
+            break;
+    }
+    return lePerguntas;
 }
 -(Pergunta*)popPergunta{
     Pergunta* pergunta;

@@ -39,7 +39,9 @@ NSInteger MAX_ROUND = 5;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"quiz max before: %d", [quiz.maxquestoes intValue]);
     engine = [[GameEngine alloc] initWithQuiz:quiz];
+     NSLog(@"quiz max after: %d", [quiz.maxquestoes intValue]);
     [engine start];
     [self roundUp];
     

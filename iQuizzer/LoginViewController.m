@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "AppDelegate.h"
+#import "Authenticator.h"
 #import "Functions.h"
 #import "MenuViewController.h"
 @interface LoginViewController ()
@@ -63,17 +63,20 @@
 - (IBAction)logar:(id)sender {
     NSString* login = apelido.text;
     NSString* password = senha.text;
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate authenticate:login password:password callbackView:self callbackMethod:@selector(callbackLogar:)];
+    //AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //[appDelegate authenticate:login password:password callbackView:self callbackMethod:@selector(callbackLogar:)];
+    Authenticator* auth = [[Authenticator alloc] init];
+    [auth login:login password:password callbackClass:self callbackMethod:@selector(resultAuth:)];
+    
 }
--(void)resultAuth:(NSNumber*)success{
-    if ([success intValue] > 0){
+-(void)resultAuth:(NSObject*)result{
+    if([result isKindOfClass:[NSNumber class]]){
         MenuViewController* menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:menu];
 
         [self presentViewController:nav animated:YES completion:nil];
     } else {
-        [Functions alert:@"Não foi possível logar"];
+        [Functions alert:(NSString*)result];
     }
 }
 - (IBAction)criarUsuario:(id)sender {
