@@ -35,7 +35,7 @@
     NSLog(@"str maxrounds: %@", [self.quiz.maxquestoes description]);
     NSLog(@"str titulo: %@", [self.quiz.titulo description]);
     maxTimePerRound = 10; //nao usado ainda
-    score = 0;
+    score = [[Score alloc] init];
 }
 -(void)start{
     jogoDAO = [[JogoDAO alloc] init];
@@ -80,6 +80,7 @@
     //rp.pergunta = pergunta;
     //rp.acertou = [NSNumber numberWithBool:resultado];
     //TODO rp.resposta = resposta;
+    [score incrementByAwnser:resposta];
     rp.resposta = resposta;
     [jogo addResultadoObject:rp];
 }
@@ -88,7 +89,7 @@
     jogo.dia = [Functions currentDate];
     jogo.hora = [Functions currentTime];
     
-    jogo.pontos = [NSNumber numberWithInt:0]; //TODO criar objeto de pontuacao
+    jogo.pontos = [score value]; //TODO criar objeto de pontuacao
     
     //NSLog(@"game of jsons: %@", [[NSString alloc] initWithData:[jogoDAO createBody:jogo] encoding:NSUTF8StringEncoding]);
     

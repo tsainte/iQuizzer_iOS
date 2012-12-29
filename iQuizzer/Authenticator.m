@@ -33,7 +33,7 @@ NSString* password;
     
 }
 -(void)isValidLogin:(NSData*)jsonData{
-    //{"success":true,"id":1}
+    NSLog(@"entrei isvalidlogin");
     NSNumber* index;
     NSString* errorMessage;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

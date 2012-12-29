@@ -12,13 +12,14 @@
 #import "Resposta.h"
 #import "JogoDAO.h"
 #import "Jogo.h"
+#import "Score.h"
 @interface GameEngine : NSObject
 
 @property NSInteger currentRound;
 
 @property NSInteger maxRounds;
 @property NSInteger maxTimePerRound;
-@property NSInteger score;
+@property Score* score;
 
 @property (strong) Quiz* quiz;
 @property (strong) NSMutableArray* perguntas;

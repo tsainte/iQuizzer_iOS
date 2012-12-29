@@ -10,8 +10,8 @@
 
 @implementation WebService
 //Ambiente de desenvolvimento
-static NSString *const ip = @"localhost";
-//static NSString *const ip = @"192.168.0.116"; //casa
+//static NSString *const ip = @"localhost";
+static NSString *const ip = @"192.168.0.116"; //casa
 //static NSString *const ip = @"10.0.0.172"; //deti
 static int port = 3000;
 
